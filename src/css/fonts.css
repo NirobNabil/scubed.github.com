@@ -1,0 +1,60 @@
+@font-face{
+	font-family: CODE_bold;
+	src: url(../../assets/fonts/CODE%20Bold.otf);
+}
+@font-face{
+	font-family: CODE_regular;
+	src: url(../../assets/fonts/CODE%20light.otf);
+}
+@font-face{
+	font-family: Neoteric_bold;
+	src: url(../../assets/fonts/NEOTERIC_bold.ttf);
+}
+@font-face{
+	font-family: Neoteric_regular;
+	src: url(../../assets/fonts/NEOTERIC_regular.ttf);
+}
+@font-face{
+	font-family: Rock_regular;
+	src: url(../../assets/fonts/ROCK.TTF);
+}
+@font-face{
+	font-family: Rock_bold;
+	src: url(../../assets/fonts/rockb.ttf);
+}
+@font-face{
+	font-family: Dosis_bold;
+	src: url("../../assets/fonts/dosis_family/Dosis-bold.otf")
+}
+@font-face{
+	font-family: Dosis_ExtraBold;
+	src: url("../../assets/fonts/dosis_family/Dosis-ExtraBold.otf")
+}
+@font-face{
+	font-family: quicksand_light;
+	src: url("../../assets/fonts/Quicksand/Quicksand-Light.ttf")
+}
+@font-face{
+	font-family: quicksand_regular;
+	src: url("../../assets/fonts/Quicksand/Quicksand-Regular.ttf")
+}
+@font-face{
+	font-family: quicksand_bold;
+	src: url("../../assets/fonts/Quicksand/Quicksand-Bold.ttf")
+}
+@font-face{
+	font-family: quicksand_medium;
+	src: url("../../assets/fonts/Quicksand/Quicksand-Medium.ttf")
+}
+@font-face{
+	font-family: raleway_thin;
+	src: url("../../assets/fonts/Raleway/Raleway-Thin.ttf")
+}
+@font-face{
+	font-family: maison;
+	src: url("../../assets/fonts/maison-neue-mono.ttf");
+}
+@font-face{
+	font-family: rezo_zero;
+	src: url("../../assets/fonts/rz-regular.ttf")
+}
