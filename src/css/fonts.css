@@ -71,6 +71,18 @@
 	src: url("../../assets/fonts/Raleway/Raleway-black.ttf")
 }
 @font-face{
+	font-family: borda;
+	src: url("../../assets/fonts/Borda/Borda.ttf")
+}
+@font-face{
+	font-family: borda_medium;
+	src: url("../../assets/fonts/Borda/Borda_Medium.ttf")
+}
+@font-face{
+	font-family: borda_light;
+	src: url("../../assets/fonts/Borda/Borda_Light.ttf")
+}
+@font-face{
 	font-family: maison;
 	src: url("../../assets/fonts/maison-neue-mono.ttf");
 }

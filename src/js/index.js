@@ -11,6 +11,7 @@ document.querySelectorAll('.our-services .skill').forEach(function(currentNode){
 })
 
 
+//********* failed attempts ************//
 //(left*distance)/perspective
 // const perspective = parseInt(window.getComputedStyle(document.querySelector('.home-container')).perspective);    //perspective of the main mother element
 // const mm_translateZ = new WebKitCSSMatrix(window.getComputedStyle(document.querySelector('.mm .parallax-img')).webkitTransform).m43;  //translateZ value of mm image

@@ -18,8 +18,6 @@ $title-font: code_bold;
 $header-font: code_bold;
 $header-font-size: 1.6em;
 
-$headline-font: raleway_thin;
-$headline-font-size: 2.5em;
 
 $big-text-font: quicksand_light;
 $big-text-font-size: 6vw;
@@ -279,6 +277,8 @@ $services-font-size: 1.4em;
 
 
 
+$headline-font: borda_light;
+$headline-font-size: 2em;
 .previous-projects{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -298,9 +298,21 @@ $services-font-size: 1.4em;
 			display: grid;
 			grid-template-columns: repeat(7, calc(100%/7));
 			.project-thumbnail{
+				position: relative;
+				width: 95%;
+				height: 35vw;
 				overflow: hidden;
-				img{
-					max-width: 100%;
+				.parallax-img-container{
+					//border: 1px solid red;
+					position: relative;
+					width: 45vw;
+					transform-style: preserve-3d;
+					img{
+						position: relative;
+						height: 100%;
+						transform-origin: 50% 50%;
+						transform: translateZ(-8px) scale(1.55);
+					}
 				}
 			}
 			.project-name{
@@ -317,6 +329,7 @@ $services-font-size: 1.4em;
 					text-align: right;
 				}
 				.project-thumbnail{
+					justify-self: right;
 					grid-row: 1 / 1;
 					grid-column: 5 / 8;
 				}
@@ -329,6 +342,7 @@ $services-font-size: 1.4em;
 					text-align: left;
 				}
 				.project-thumbnail{
+					justify-self: left;
 					grid-row: 1 / 1;
 					grid-column: 1 / 4;
 				}

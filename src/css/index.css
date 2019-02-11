@@ -189,8 +189,8 @@ h1, h2, h3, h4, a {
     grid-column: span 3;
     display: flex;
     justify-content: center;
-    font-family: raleway_thin;
-    font-size: 2.4em;
+    font-family: borda_light;
+    font-size: 1.9em;
     padding: 1em;
     margin-bottom: 2em; }
   .previous-projects .projects {
@@ -200,13 +200,23 @@ h1, h2, h3, h4, a {
       display: grid;
       grid-template-columns: repeat(7, calc(100%/7)); }
       .previous-projects .projects .project .project-thumbnail {
+        position: relative;
+        width: 95%;
+        height: 35vw;
         overflow: hidden; }
-        .previous-projects .projects .project .project-thumbnail img {
-          max-width: 100%; }
+        .previous-projects .projects .project .project-thumbnail .parallax-img-container {
+          position: relative;
+          width: 45vw;
+          transform-style: preserve-3d; }
+          .previous-projects .projects .project .project-thumbnail .parallax-img-container img {
+            position: relative;
+            height: 100%;
+            transform-origin: 50% 50%;
+            transform: translateZ(-8px) scale(1.55); }
       .previous-projects .projects .project .project-name {
         display: flex;
         padding: 1em;
-        font-family: raleway_thin;
+        font-family: borda_light;
         font-size: 3em; }
       .previous-projects .projects .project:nth-child(odd) .project-name {
         grid-column: 2 / 5;
@@ -214,6 +224,7 @@ h1, h2, h3, h4, a {
         justify-self: right;
         text-align: right; }
       .previous-projects .projects .project:nth-child(odd) .project-thumbnail {
+        justify-self: right;
         grid-row: 1 / 1;
         grid-column: 5 / 8; }
       .previous-projects .projects .project:nth-child(even) .project-name {
@@ -222,6 +233,7 @@ h1, h2, h3, h4, a {
         grid-column: 4 / 7;
         text-align: left; }
       .previous-projects .projects .project:nth-child(even) .project-thumbnail {
+        justify-self: left;
         grid-row: 1 / 1;
         grid-column: 1 / 4; }
   .previous-projects .show-more {
