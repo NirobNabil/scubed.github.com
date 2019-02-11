@@ -51,6 +51,26 @@
 	src: url("../../assets/fonts/Raleway/Raleway-Thin.ttf")
 }
 @font-face{
+	font-family: raleway_regular;
+	src: url("../../assets/fonts/Raleway/Raleway-regular.ttf")
+}
+@font-face{
+	font-family: raleway_light;
+	src: url("../../assets/fonts/Raleway/Raleway-Light.ttf")
+}
+@font-face{
+	font-family: raleway_medium;
+	src: url("../../assets/fonts/Raleway/Raleway-Medium.ttf")
+}
+@font-face{
+	font-family: raleway_semibold;
+	src: url("../../assets/fonts/Raleway/Raleway-SemiBold.ttf")
+}
+@font-face{
+	font-family: raleway_black;
+	src: url("../../assets/fonts/Raleway/Raleway-black.ttf")
+}
+@font-face{
 	font-family: maison;
 	src: url("../../assets/fonts/maison-neue-mono.ttf");
 }

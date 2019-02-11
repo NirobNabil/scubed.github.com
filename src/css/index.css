@@ -53,6 +53,7 @@ h1, h2, h3, h4, a {
   width: 100%;
   position: relative; }
   .landing-container .particlejs-background {
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -61,7 +62,7 @@ h1, h2, h3, h4, a {
   .landing-container .landing-text {
     margin-left: 1em;
     grid-column: span 3;
-    grid-row: 3;
+    grid-row: 4;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -75,81 +76,111 @@ h1, h2, h3, h4, a {
       width: 5em;
       color: #FEFEFE;
       background: black; }
-  .landing-container .mm1 {
-    grid-row: 3 / 5;
-    grid-column: 7 / 9; }
-    .landing-container .mm1 img {
-      left: 48%;
-      top: -8%; }
-  .landing-container .mm2 {
-    grid-row: 9 / 12;
-    grid-column: 4 / 6; }
-    .landing-container .mm2 img {
-      left: 0;
-      top: -8%; }
-  .landing-container .mm3 {
-    grid-row: 7;
-    grid-column: 0 / 3; }
-    .landing-container .mm3 img {
-      left: -38%;
-      top: -8%; }
-  .landing-container .mm {
+  .landing-container .fixed-animating-objects {
     position: absolute;
-    width: 25vw;
-    height: 26vw;
-    top: 0;
-    overflow: hidden; }
-    .landing-container .mm .parallax-img-container {
-      height: 25vw;
-      transform-style: preserve-3d; }
-      .landing-container .mm .parallax-img-container img {
-        position: relative;
-        height: 100%;
-        filter: grayscale(100%);
-        transform-origin: 50% 50%;
-        transform: translateZ(-5px) scale(1.55); }
-
-.services-container {
-  background-image: url(../../assets/particles.png);
-  padding-top: 4em;
-  padding-bottom: 12em;
-  display: grid;
-  grid-template-columns: 1fr 85vw 1fr;
-  grid-template-rows: auto; }
-  .services-container .headline {
-    grid-column: span 3;
-    width: 100%;
+    grid-column: span 8;
+    grid-row: span 12;
     display: flex;
-    justify-content: center;
-    font-family: raleway_thin;
-    font-size: 2.5em; }
-  .services-container .services {
-    display: grid;
-    grid-column: 2;
-    grid-template-columns: 1fr 1fr 1fr; }
-    .services-container .services .service {
-      display: grid;
-      grid-template-columns: 1fr 20vw 1fr;
-      align-content: baseline; }
-      .services-container .services .service > * {
-        grid-column: 2; }
-      .services-container .services .service .service-name {
-        margin-top: 1.2em;
-        padding: .8em 0em;
-        font-family: code_bold;
-        font-size: 3em; }
-      .services-container .services .service .service-list {
-        font-family: quicksand_regular; }
-        .services-container .services .service .service-list li {
-          font-size: 1.4em;
-          list-style-type: none; }
-      .services-container .services .service .learn-more {
-        color: white;
-        font-family: quicksand_regular;
-        margin-top: 1em;
-        padding: .7em;
-        width: 5.5em;
-        background: black; }
+    height: 100%;
+    width: 100%; }
+    .landing-container .fixed-animating-objects .mm {
+      position: absolute;
+      width: 23vw;
+      height: 25vw;
+      overflow: hidden; }
+      .landing-container .fixed-animating-objects .mm .parallax-img-container {
+        position: relative;
+        height: 25vw;
+        transform-style: preserve-3d; }
+        .landing-container .fixed-animating-objects .mm .parallax-img-container img {
+          position: relative;
+          height: 100%;
+          filter: grayscale(100%);
+          transform-origin: 50% 50%;
+          transform: translateZ(-5px) scale(1.55); }
+    .landing-container .fixed-animating-objects .mm1 {
+      left: 77vw;
+      top: 20%; }
+      .landing-container .fixed-animating-objects .mm1 img {
+        left: 48%;
+        top: -8%; }
+    .landing-container .fixed-animating-objects .mm2 {
+      left: 37vw;
+      top: 65%; }
+      .landing-container .fixed-animating-objects .mm2 img {
+        left: 0;
+        top: -8%; }
+    .landing-container .fixed-animating-objects .mm3 {
+      left: 0vw;
+      top: 50%; }
+      .landing-container .fixed-animating-objects .mm3 img {
+        left: -38%;
+        top: -8%; }
+
+.our-services {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, calc(100%/12));
+  grid-template-rows: repeat(8, calc(100%/8)); }
+  .our-services .skills-container {
+    position: relative;
+    grid-row: 3 / 8;
+    grid-column: 4;
+    min-width: 20em;
+    font-family: quicksand_light; }
+    .our-services .skills-container li {
+      list-style-type: none; }
+    .our-services .skills-container .skill-container-title {
+      font-size: 1.4em;
+      padding-bottom: 1.5em; }
+    .our-services .skills-container .skill {
+      position: relative;
+      font-size: 1.5em;
+      padding-bottom: .1em;
+      max-height: 1.7em;
+      overflow: hidden;
+      transition: .6s;
+      cursor: pointer;
+      transition-timing-function: ease-in-out; }
+    .our-services .skills-container .skill:hover {
+      max-height: 13em; }
+    .our-services .skills-container .skill-list li:before {
+      margin-top: .5em;
+      position: absolute;
+      margin-left: -1em;
+      height: 2px;
+      width: 9px;
+      background: black;
+      content: '';
+      transition: .2s; }
+    .our-services .skills-container .skill-list li:hover:before {
+      margin-left: .2em; }
+  .our-services .tech-container {
+    grid-row: 3;
+    grid-column: 7 / 9;
+    width: 15em;
+    font-family: quicksand_light;
+    font-size: 1.4em; }
+    .our-services .tech-container .tech-container-title {
+      font-family: raleway_regular;
+      padding-bottom: .5em; }
+    .our-services .tech-container .text {
+      font-family: quicksand_regular;
+      font-size: 0.85em; }
+    .our-services .tech-container .more {
+      position: relative; }
+      .our-services .tech-container .more span {
+        padding-left: 1.5em; }
+    .our-services .tech-container .more:before {
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      background: black;
+      content: '';
+      transition: .1s; }
+    .our-services .tech-container .more:hover:before {
+      width: 7px; }
 
 .previous-projects {
   display: grid;
@@ -210,5 +241,60 @@ h1, h2, h3, h4, a {
   overflow-y: scroll;
   perspective: 5px;
   border: 1px solid black; }
+
+/* abandoned peep's styles
+
+.services-container{
+	background-image: url(../../assets/particles.png);
+	padding-top: 4em;
+	padding-bottom: 12em;
+	display: grid;
+	grid-template-columns: 1fr 85vw 1fr;
+	grid-template-rows: auto;
+	.headline{
+		grid-column: span 3;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		font-family: $headline-font;
+		font-size: $headline-font-size;
+	}
+	.services{
+		display: grid;
+		grid-column: 2;
+		grid-template-columns: 1fr 1fr 1fr;
+		//min-height: 100vh;
+		.service{
+			display: grid;
+			grid-template-columns: 1fr 20vw 1fr;
+			align-content: baseline;
+			> *{
+				grid-column: 2;
+			}
+			.service-name{
+				margin-top: 1.2em;
+				padding: .8em 0em;
+				font-family: $title-font;
+				font-size: $headline-font-size + .5;
+			}
+			.service-list{
+				font-family: $small-text-font;
+				li{
+					font-size: $small-text-font-size + .4;
+					list-style-type: none;
+				}
+			}
+			.learn-more{
+				color: white;
+				font-family: $small-text-font;
+				margin-top: 1em;
+				padding: .7em;
+				width: 5.5em;
+				background: black;
+			}
+		}
+	}
+}
+*/
 
 /*# sourceMappingURL=index.css.map */
