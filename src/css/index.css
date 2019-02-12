@@ -14,13 +14,19 @@ h1, h2, h3, h4, a {
   grid-column: 1 / 8;
   grid-row: 1 / 13; }
 
+.home-container {
+  height: 100vh;
+  perspective: 20px;
+  overflow: scroll;
+  overflow-x: hidden; }
+
 /* header start */
 .header {
   top: 0;
   position: absolute;
   width: 100%;
   z-index: 10;
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-between; }
   .header .name {
@@ -38,18 +44,12 @@ h1, h2, h3, h4, a {
     font-family: rezo_zero;
     font-size: 1vw; }
 
-.home-container {
-  height: 100vh;
-  perspective: 20px;
-  overflow: scroll;
-  overflow-x: hidden; }
-
 .scroll-content {
   transform-style: preserve-3d; }
 
 /*landing screen*/
 .landing-container {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(12, 8.33%);
   height: 170vh;
@@ -123,7 +123,7 @@ h1, h2, h3, h4, a {
 .our-services {
   width: 100vw;
   height: 100vh;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(12, calc(100%/12));
   grid-template-rows: repeat(8, calc(100%/8)); }
   .our-services .skills-container {
@@ -195,57 +195,76 @@ h1, h2, h3, h4, a {
     font-family: borda_light;
     font-size: 1.9em;
     padding: 1em;
-    margin-bottom: 2em; }
+    margin-bottom: 4em; }
   .previous-projects .projects {
+    display: flex;
+    flex-direction: column;
     grid-column: span 3; }
     .previous-projects .projects .project {
+      margin-top: -5vw;
+      position: relative;
       grid-column: span 3;
       display: grid;
-      grid-template-columns: repeat(7, calc(100%/7)); }
+      height: 31vw;
+      grid-template-columns: repeat(20, calc(100%/20));
+      grid-template-rows: repeat(3, calc(100%/3)); }
       .previous-projects .projects .project .project-thumbnail {
         position: relative;
-        width: 95%;
-        height: 35vw;
-        overflow: hidden; }
+        display: flex;
+        width: 100%;
+        height: 31vw;
+        overflow: hidden;
+        grid-row: 1 / 3; }
         .previous-projects .projects .project .project-thumbnail .parallax-img-container {
           position: relative;
-          width: 45vw;
+          width: 100%;
+          height: 100%;
           transform-style: preserve-3d; }
           .previous-projects .projects .project .project-thumbnail .parallax-img-container img {
             position: relative;
-            height: 100%;
+            width: 100%;
             transform-origin: 50% 50%;
             transform: translateZ(-8px) scale(1.55); }
+      .previous-projects .projects .project .spacer {
+        background: black;
+        width: 1px;
+        height: 100%;
+        grid-column: 10 / 12;
+        justify-self: center; }
+        .previous-projects .projects .project .spacer:nth-child(1) {
+          grid-row: 1 / 2; }
+        .previous-projects .projects .project .spacer:nth-child(2) {
+          grid-row: 3 / 4; }
       .previous-projects .projects .project .project-name {
-        display: flex;
-        padding: 1em;
-        font-family: borda_light;
-        font-size: 3em; }
+        position: relative;
+        box-sizing: border-box;
+        font-family: raleway_thin;
+        font-size: 2.3em;
+        padding: 1vw 3vw;
+        align-self: center; }
       .previous-projects .projects .project:nth-child(odd) .project-name {
-        grid-column: 2 / 5;
-        align-self: center;
-        justify-self: right;
+        grid-column: 1 / 12;
+        justify-content: left;
         text-align: right; }
       .previous-projects .projects .project:nth-child(odd) .project-thumbnail {
         justify-self: right;
-        grid-row: 1 / 1;
-        grid-column: 5 / 8; }
+        grid-column: 12 / 21; }
       .previous-projects .projects .project:nth-child(even) .project-name {
-        align-self: center;
-        justify-self: left;
-        grid-column: 4 / 7;
+        grid-column: 10 / 21;
         text-align: left; }
       .previous-projects .projects .project:nth-child(even) .project-thumbnail {
         justify-self: left;
         grid-row: 1 / 1;
-        grid-column: 1 / 4; }
+        grid-column: 1 / 10; }
   .previous-projects .show-more {
-    grid-column: 1 / 4;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     color: white;
     font-family: quicksand_regular;
     margin-top: 1em;
     padding: .7em;
-    width: 100%;
+    display: inline-block;
     background: black; }
 
 .test-ground {
