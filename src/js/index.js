@@ -2,6 +2,9 @@ particlesJS.load('particles-js', 'settings/particlesjs-config.json', function() 
   console.log('callback - particles.js config loaded');
 });
 
+var Scrollbar = window.Scrollbar;
+Scrollbar.init(document.querySelector('.home-container'));
+
 
 document.querySelectorAll('.our-services .skill').forEach(function(currentNode){
   console.log(currentNode);

@@ -84,6 +84,9 @@ $perspective: 20px;
 	overflow: scroll;
 	overflow-x: hidden;
 }
+.scroll-content{
+	transform-style: preserve-3d;
+}
 
 /*landing screen*/
 .landing-container{
