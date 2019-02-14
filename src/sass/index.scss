@@ -41,6 +41,19 @@ h1, h2, h3, h4, a{
 	color          : inherit;
 }
 
+//custom scrollbar
+::-webkit-scrollbar{
+	width: .5vw;
+	background: transparent;
+}
+::-webkit-scrollbar-track{
+	background: rgba(0,0,0,.1)
+}
+::-webkit-scrollbar-thumb{
+	border-radius: 1vw;
+	background: rgba(0,0,0,.4);
+}
+
 /* particles js stuff */
 .particles-js-canvas-el{
 	grid-column: 1 / 8;
