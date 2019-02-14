@@ -39,3 +39,6 @@ getElem('.parallax-img-container', true).forEach(function(currentNode, index){  
     let mm_left = X - (viewport_width/2);                                                                                     //distance of mm from the middle of the viewport
     currentNode.querySelector('img').style.left = (( mm_left * Math.abs(mm_translateZ) ) / perspective) + 'px';
 })
+
+
+//

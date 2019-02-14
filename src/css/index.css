@@ -27,16 +27,16 @@ h1, h2, h3, h4, a {
 /* header start */
 .header {
   top: 0;
-  position: sticky;
+  position: fixed;
   width: 100%;
   z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: space-between; }
   .header .name {
-    margin: 0;
+    margin-left: 4vw;
     padding: 1em;
-    font-family: code_bold;
+    font-family: code_regular;
     font-size: 1.6em; }
   .header .nav {
     width: 25%;
@@ -77,22 +77,15 @@ h1, h2, h3, h4, a {
     grid-column: 1 / 9;
     grid-row: 1 / 13; }
   .landing-container .landing-text {
-    margin-left: 1em;
-    grid-column: span 3;
-    grid-row: 4;
+    margin-left: 4vw;
+    font-family: raleway_regular;
+    font-size: 7em;
+    grid-column: span 5;
+    grid-row: 3;
     width: 100%;
     display: flex;
     flex-direction: column;
     z-index: 10; }
-    .landing-container .landing-text h1 {
-      font-family: quicksand_light;
-      font-size: 7vw;
-      padding: .01em .1em; }
-    .landing-container .landing-text .special {
-      font-size: 7.5vw;
-      width: 5em;
-      color: #FEFEFE;
-      background: black; }
   .landing-container .fixed-animating-objects {
     position: absolute;
     grid-column: span 8;
@@ -102,12 +95,12 @@ h1, h2, h3, h4, a {
     width: 100%; }
     .landing-container .fixed-animating-objects .mm {
       position: absolute;
-      width: 23vw;
-      height: 25vw;
+      width: 28vw;
+      height: 32vw;
       overflow: hidden; }
       .landing-container .fixed-animating-objects .mm .parallax-img-container {
         position: relative;
-        height: 25vw;
+        height: 32vw;
         transform-style: preserve-3d; }
         .landing-container .fixed-animating-objects .mm .parallax-img-container img {
           position: relative;
@@ -116,10 +109,10 @@ h1, h2, h3, h4, a {
           transform-origin: 50% 50%;
           transform: translateZ(-5px) scale(1.25); }
     .landing-container .fixed-animating-objects .mm1 {
-      left: 77vw;
+      left: 72vw;
       top: 20%; }
     .landing-container .fixed-animating-objects .mm2 {
-      left: 37vw;
+      left: 32vw;
       top: 65%; }
     .landing-container .fixed-animating-objects .mm3 {
       left: 0vw;
@@ -197,10 +190,10 @@ h1, h2, h3, h4, a {
     grid-column: span 3;
     display: flex;
     justify-content: center;
-    font-family: borda_light;
-    font-size: 1.9em;
+    font-family: quicksand_light;
+    font-size: 1em;
     padding: 1em;
-    margin-bottom: 4em; }
+    margin-bottom: 7vw; }
   .previous-projects .projects {
     display: flex;
     flex-direction: column;
@@ -246,7 +239,7 @@ h1, h2, h3, h4, a {
         position: relative;
         box-sizing: border-box;
         font-family: raleway_thin;
-        font-size: 2.3em;
+        font-size: 2em;
         padding: 1vw 3vw;
         align-self: center; }
       .previous-projects .projects .project:nth-child(odd) .project-name {
