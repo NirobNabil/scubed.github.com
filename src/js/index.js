@@ -4,8 +4,14 @@ particlesJS.load('particles-js', 'settings/particlesjs-config.json', function() 
 });
 
 //initializes smooth scrolling on home-container
-var Scrollbar = window.Scrollbar;
-Scrollbar.init(document.querySelector('.home-container'));
+//var Scrollbar = window.Scrollbar;
+//Scrollbar.init(document.querySelector('.home-container'));
+const scroll = new Scrooth({
+    element: document.querySelector('.home-container'),
+    strength: 18,
+    acceleration: 1.9,
+    deceleration: .935,
+});
 
 
 //shorthand for queryselector and queryselectorall
@@ -41,4 +47,6 @@ getElem('.parallax-img-container', true).forEach(function(currentNode, index){  
 })
 
 
-//
+
+
+
