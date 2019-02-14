@@ -47,6 +47,23 @@ getElem('.parallax-img-container', true).forEach(function(currentNode, index){  
 })
 
 
+//setting up scrollreveal
+const defaults = {
+    delay: 375,
+    duration: 600,
+    distance: '100px',
+    container: '.home-container',
+    //interval: 0,
+    origin: 'bottom',
+    //easing: 'cubic-bezier(.51,.24,.65,1.02)'
+}
+var sr = ScrollReveal(defaults);
 
+sr.debug = true;                         //debug mode
+sr.reveal('.landing-text', {});
+sr.reveal(document.querySelectorAll('.skill'), {
+    opacity: .1,
+    //container: '.scroll-content'
+});
 
 
