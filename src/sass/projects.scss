@@ -1,0 +1,41 @@
+.header{
+    color: white !important;
+}
+.projects-container{
+    margin: 0;
+    padding: 0;
+}
+.landing-container{
+    display: grid;
+    grid-template-columns: minmax(10vw, 25vw) 10vw minmax(20vw, 40vw) 1fr;
+    grid-template-rows: 1fr minmax(25rem, 20rem) 1fr;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    top: 0;
+    background: black;
+    color: white;
+    .logo{
+        grid-column: 1;
+        grid-row: 2;
+        position: relative;
+        font-family: code_regular;
+        font-size: 5vw;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+
+        //-webkit-text-stroke: 2px;
+    }
+    .headline{
+        display: flex;
+        align-items: center;
+        position: relative;
+        grid-column: 3;
+        grid-row: 2;
+        line-height: .95em;
+        font-size: 9vw;
+        font-family: rezo_zero;
+    }
+}

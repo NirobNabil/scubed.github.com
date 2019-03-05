@@ -1,0 +1,57 @@
+
+<div class="header">
+    <style>
+    /* header start */
+    @font-face{
+        font-family: CODE_regular;
+        src: url(CODE%20light.otf);
+    }
+    .header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    background: #FEFEFEFE;
+    justify-content: space-between; }
+    .header .name {
+        margin-left: 4vw;
+        padding: .5em 1em;
+        font-family: CODE_regular;
+        font-size: 1.6em; }
+    .header .nav {
+        width: 25%;
+        display: flex;
+        align-self: center; }
+    .header .link {
+        position: relative;
+        z-index: 2;
+        padding: 1em 1.5em;
+        font-family: 'Raleway', sans-serif; }
+        .header .link a {
+            color: #222222;
+            text-decoration: none;
+            position: relative; }
+        .header .link a:after {
+            content: '';
+            background: black;
+            width: 0%;
+            height: 1px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transition: .3s; }
+        .header .link a:hover:after {
+            width: 100%; }    
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <div class="name">
+        <h3>scubed</h3>
+    </div>
+    <div class="nav">
+        <div class="link"><a href="#">Projects </a></div>
+        <div class="link"><a href="#"> Tech </a></div>
+        <div class="link"><a href="#"> Contact </a></div>
+    </div>
+</div>
