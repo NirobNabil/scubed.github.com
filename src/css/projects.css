@@ -35,4 +35,75 @@
     font-size: 9vw;
     font-family: rezo_zero; }
 
+.about-container {
+  display: flex;
+  flex-direction: row; }
+  .about-container .about-img {
+    position: relative;
+    top: -20vh; }
+    .about-container .about-img img {
+      width: 35vw; }
+  .about-container .about-text {
+    position: relative;
+    width: 20em;
+    padding: 8rem 10rem; }
+    .about-container .about-text p {
+      font-family: quicksand_medium;
+      font-size: 2em;
+      width: 100%;
+      text-align: center; }
+
+.skills-pasion-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .skills-pasion-container div {
+    padding: 0em 3rem;
+    font-family: quicksand_medium;
+    width: 18rem; }
+    .skills-pasion-container div .title {
+      font-size: .9rem;
+      padding-bottom: .4rem;
+      font-family: monospace;
+      margin: .5em 0em; }
+    .skills-pasion-container div li {
+      line-height: 1.2em;
+      font-size: 1.9em;
+      list-style-type: none; }
+    .skills-pasion-container div p {
+      font-family: quicksand_regular;
+      font-size: 1.1em;
+      margin: 0; }
+
+.special-text-container {
+  cursor: none;
+  margin-top: 8em;
+  position: relative;
+  display: flex;
+  flex-direction: row; }
+  .special-text-container .anim-container {
+    z-index: 10;
+    position: absolute;
+    width: 150vw;
+    height: 100%; }
+  .special-text-container .special-img img {
+    top: 10rem;
+    z-index: 5;
+    left: 50vw;
+    transform: translateX(-50%);
+    max-width: 25rem;
+    position: absolute; }
+  .special-text-container .special-text {
+    position: relative;
+    color: #202020;
+    font-family: rezo_zero;
+    font-size: 9rem;
+    left: 50vw;
+    opacity: .3;
+    transition: .5s;
+    transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49); }
+  .special-text-container .special-text-onview {
+    left: 30vw !important;
+    opacity: 1 !important; }
+
 /*# sourceMappingURL=projects.css.map */
