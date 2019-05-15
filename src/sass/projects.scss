@@ -96,7 +96,7 @@
 .special-text-container{
     margin-top: 8em;
     position: relative;
-    display: none;//flex;
+    display: flex;
     flex-direction: row;   
     .special-img{
         position: relative;
@@ -151,7 +151,6 @@
 }
 
 .post-special-text{
-    display: none;
     .text-container{
         position: relative;
         left: 50vw;

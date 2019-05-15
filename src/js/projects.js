@@ -50,7 +50,7 @@ function main(){
                         setCursorPositionAfterScroll();
                     }
                 })
-            }, 1500) 
+            }, 100) 
         }
 
         let specialText = document.querySelector('.special-text');

@@ -93,7 +93,7 @@
 .special-text-container {
   margin-top: 8em;
   position: relative;
-  display: none;
+  display: flex;
   flex-direction: row;
 }
 .special-text-container .special-img {
@@ -147,9 +147,6 @@
   opacity: 1 !important;
 }
 
-.post-special-text {
-  display: none;
-}
 .post-special-text .text-container {
   position: relative;
   left: 50vw;
