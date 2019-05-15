@@ -9,64 +9,69 @@ document.addEventListener('load', main())
 
 function main(){
     setTimeout(function(){
-        let animContainer = document.querySelector('.special-text-container > .anim-container');
-        console.log(parseInt(getComputedStyle(animContainer).height));
-        let two = new Two({
-            width: parseInt(getComputedStyle(animContainer).width),
-            height: parseInt(getComputedStyle(animContainer).height),
-            type: "SVGRenderer"
-        });
-        two.appendTo(animContainer);
-    
-        let cursor = two.makeCircle(0, 0, 30);
-        cursor.fill = "#000000";
-    
-        var cursorTimeout = 0;
-        document.querySelector('.special-text-container').addEventListener('mousemove', function(e){
-            let cursorX = e.clientX - document.querySelector('.special-text-container').getBoundingClientRect().x;
-            let cursorY = e.clientY - document.querySelector('.special-text-container').getBoundingClientRect().y
-            cursor.translation.x = cursorX;
-            cursor.translation.y = cursorY;
-            cursorTimeout++;
-            if(cursorTimeout>0){
-                two.update()
-                cursorTimeout = 0;
-            }
-        })
-        
-        var specialText = document.querySelector('.special-text-container > .special-text');
-        var specialImg = document.querySelector('.special-text-container > .special-img');
-        animContainer.addEventListener('click', function(e){
-            console.log(e.clientX);
+
+        //TODO: when entering an element by just scrolling and not moving the mouse, the position of the cursor
+        //      is not set correctly
+        function addCustomCursor(el, cursorClassName, cursorClassNameOnView, baseElem = null){
+            //assuming cursor is defined inside the markup of the main element
+            //assuming there is a transform property defined for the cursor element
+            setTimeout(function(){
+                if(baseElem == null){baseElem = el}
+                console.log(baseElem);
+                let cursor = el.querySelector('.' + cursorClassName);
+                let elPosY;
+                (baseElem != el) ? elPosY = baseElem.offsetTop + el.offsetTop : elPosY = baseElem.offsetTop;
+                
+                let previousDIff = elPosY - window.scrollY;
+                function setCursorPositionAfterScroll(){
+                    transforms = cursor.style.transform.split(',');
+                    currentY = parseInt(transforms[1])
+                    console.log(elPosY)
+                    deltaDiff = previousDIff - (elPosY - window.scrollY);
+                    previousDIff = elPosY - window.scrollY;
+                    transforms[1] = (currentY + deltaDiff) + 'px)';
+                    cursor.style.transform = transforms[0] + ',' + transforms[1];
+                }
+
+                el.addEventListener('mouseenter', function(){
+                    setCursorPositionAfterScroll();
+                    cursor.classList.add(cursorClassNameOnView);
+                })
+                el.addEventListener('mouseleave', function(){
+                    cursor.classList.remove(cursorClassNameOnView);
+                })
+                el.addEventListener('mousemove', function(e){
+                    cursor.style.transform = "translate(" + (e.clientX - el.getBoundingClientRect().x) + 'px,' + (e.clientY - el.getBoundingClientRect().y) + 'px)';
+                })
+
+                
+                document.addEventListener('scroll', function(e){
+                    if(window.scrollY >= (elPosY - el.clientHeight) && window.scrollY <= (elPosY + el.clientHeight)){
+                        setCursorPositionAfterScroll();
+                    }
+                })
+            }, 1500) 
+        }
+
+        let specialText = document.querySelector('.special-text');
+        let specialImg = document.querySelector('.special-img');
+        addCustomCursor(specialText, 'cursor', 'cursor-onview', document.querySelector('.special-text-container'))
+        const baseSpecialTextLeft = parseInt(window.getComputedStyle(specialText).left);
+        specialText.addEventListener('click', function(e){
             if(e.clientX >= specialText.getBoundingClientRect().x){
+                let cursor = specialText.querySelector('.cursor');
                 specialText.classList.toggle('special-text-onview');
                 specialImg.classList.toggle('special-img-onview');
+                // let transforms = cursor.style.transform.split(',');
+                // let currentX = parseInt(transforms[0])
+                // cursor.style.transform = "translate(" + currentX + (baseSpecialTextLeft - parseInt(window.getComputedStyle(specialText).left) ) + "px," + transforms[1] + 'px)';
+                // console.log("translate(" + currentX + (baseSpecialTextLeft - parseInt(window.getComputedStyle(specialText).left) ) + "px," + transforms[1] + 'px)');
+                // console.log( parseInt(window.getComputedStyle(document.querySelector('.special-text-onview')).left) );
             }
         })
 
-        var origin = function(){
-            let origin = document.querySelector('.origin-container');
-            let mouse = origin.querySelector('.mouse');
+        addCustomCursor(document.querySelector('.origin-container'), 'cursor', 'cursor-onview')
 
-            origin.addEventListener('mouseenter', function(){
-                mouse.classList.add('mouse-onview');
-            })
-            origin.addEventListener('mouseleave', function(){
-                mouse.classList.remove('mouse-onview');
-            })
-            origin.addEventListener('mousemove', function(e){
-                //console.log(e.clientX - mouseDimension[1]);
-                mouse.style.transform = "translate(" + e.clientX + 'px,' + (e.clientY - origin.getBoundingClientRect().y) + 'px)';
-            })
-            origin.addEventListener('wheel', function(e){
-                transforms = mouse.style.transform.split(',');
-                currentY = parseInt(mouse.style.transform.split(',')[1])
-                transforms[1] = (currentY + e.deltaY) + 'px)';
-                console.log(e.y);
-                mouse.style.transform = transforms[0] + ',' + transforms[1];
-            })
-        }
-        origin();
     }, 100)
 }
 

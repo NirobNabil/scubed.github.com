@@ -91,17 +91,10 @@
   margin: 0;
 }
 .special-text-container {
-  cursor: none;
   margin-top: 8em;
   position: relative;
-  display: flex;
+  display: none;
   flex-direction: row;
-}
-.special-text-container .anim-container {
-  z-index: 10;
-  position: absolute;
-  width: 100vw;
-  height: 100%;
 }
 .special-text-container .special-img {
   position: relative;
@@ -121,6 +114,7 @@
   left: 0vw !important;
 }
 .special-text-container .special-text {
+  cursor: none;
   width: 65vw;
   line-height: 1em;
   position: relative;
@@ -132,11 +126,30 @@
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49);
 }
+.special-text-container .special-text .cursor {
+  opacity: 1 !important;
+  position: absolute;
+  height: 0rem;
+  width: 0rem;
+  border-radius: 50%;
+  background: black;
+  transform-origin: center;
+  z-index: 10;
+  transform: translate(0px, 0px);
+  transition: transform 0.1s;
+  transition: padding 0.2s;
+}
+.special-text-container .special-text .cursor-onview {
+  padding: 2.5rem;
+}
 .special-text-container .special-text-onview {
   left: 32vw !important;
   opacity: 1 !important;
 }
 
+.post-special-text {
+  display: none;
+}
 .post-special-text .text-container {
   position: relative;
   left: 50vw;
@@ -158,7 +171,7 @@
   display: flex;
   overflow: hidden;
 }
-.origin-container .mouse {
+.origin-container .cursor {
   position: absolute;
   height: 0rem;
   width: 0rem;
@@ -167,10 +180,11 @@
   background: white;
   mix-blend-mode: difference;
   transform-origin: center;
+  transform: translate(0px, 0px);
   transition: transform 0.1s;
-}
-.origin-container .mouse-onview {
   transition: padding 0.2s;
+}
+.origin-container .cursor-onview {
   padding: 2.5em;
 }
 .origin-container .origin {
@@ -189,6 +203,37 @@
   font-family: rezo_zero;
   font-size: 2rem;
   margin: 0;
+}
+
+.team-container {
+  padding: 7rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.team-container .title {
+  font-size: 1.2em;
+  padding: 2rem 1rem;
+  width: 50rem;
+  align-self: center;
+  font-family: monospace;
+}
+.team-container .team-members {
+  width: 50rem;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.team-container .team-members .member {
+  font-size: 1rem;
+  min-width: 20rem;
+  padding-bottom: 3rem;
+  font-family: quicksand_medium;
+}
+.team-container .team-members .member .name {
+  font-family: quicksand_medium;
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=projects.css.map */
