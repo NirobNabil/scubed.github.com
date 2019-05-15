@@ -82,7 +82,8 @@
             list-style-type: none;
         }
         p{
-            font-family: quicksand_regular;
+            font-family: quicksand_medium;
+            line-height: 1.4em;
             font-size: 1.1em;
             margin: 0;
         }
@@ -101,18 +102,29 @@
     .anim-container{
         z-index: 10;
         position: absolute;
-        width: 150vw;
+        width: 100vw;
         height: 100%;
     }
+    .special-img{
+        position: relative;
+        left: 45vw;
+        transition: .5s;
+        transition-delay: .3s;
+        transition-timing-function: cubic-bezier(.55,.94,.59,.49);
+    }
     .special-img img{
-        top: 10rem;
+        top: 50%;
         z-index: 5;
-        left: 50vw;
-        transform: translateX(-50%);
-        max-width: 25rem;
+        transform: translateX(-50%) translateY(-50%);
+        max-width: 30rem;
         position: absolute;
     }
+    .special-img-onview{
+        left: 0vw !important; 
+    }
     .special-text{
+        width: 65vw;
+        line-height: 1em;
         position: relative;
         color: #202020;
         font-family: rezo_zero;
@@ -123,7 +135,65 @@
         transition-timing-function: cubic-bezier(.55,.94,.59,.49);
     }
     .special-text-onview{
-        left: 30vw !important;
+        left: 32vw !important;
         opacity: 1 !important;
+    }
+}
+
+.post-special-text{
+    //display: none;
+    .text-container{
+        position: relative;
+        left: 50vw;
+        padding: 8em 1rem;
+        width: 18rem;
+        font-family: quicksand_medium;
+        line-height: 1.4em;
+        font-size: 1.1em;
+        margin: 0;
+    }
+}
+
+.origin-container{
+    cursor: none;
+    position: relative;
+    background: #111111;
+    color: #EEEEEE;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+    .mouse{
+        position: absolute;
+        height: 0rem;
+        width: 0rem;
+        z-index: 5;
+        border-radius: 50%;
+        background: white;
+        mix-blend-mode: difference;
+        transform-origin: center;
+        transition: transform .1s;
+    }
+    .mouse-onview{
+        transition: padding .2s;
+        padding: 2.5em;
+    }
+    .origin{
+        align-self: center;
+        margin-left: 20%;
+        //padding: 0em 3rem;
+        font-family: quicksand_medium;
+        width: 21rem;
+        .title{
+            font-size: 1rem;
+            padding-bottom: .9rem;
+            font-family: monospace;
+            margin: .5em 0em;
+        }
+        p{
+            font-family: rezo_zero;
+            font-size: 2rem;
+            margin: 0;
+        }
     }
 }

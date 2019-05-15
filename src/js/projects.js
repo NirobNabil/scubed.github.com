@@ -33,15 +33,40 @@ function main(){
                 cursorTimeout = 0;
             }
         })
-
+        
         var specialText = document.querySelector('.special-text-container > .special-text');
+        var specialImg = document.querySelector('.special-text-container > .special-img');
         animContainer.addEventListener('click', function(e){
             console.log(e.clientX);
             if(e.clientX >= specialText.getBoundingClientRect().x){
-                specialText.classList.add('special-text-onview')
+                specialText.classList.toggle('special-text-onview');
+                specialImg.classList.toggle('special-img-onview');
             }
         })
 
+        var origin = function(){
+            let origin = document.querySelector('.origin-container');
+            let mouse = origin.querySelector('.mouse');
+
+            origin.addEventListener('mouseenter', function(){
+                mouse.classList.add('mouse-onview');
+            })
+            origin.addEventListener('mouseleave', function(){
+                mouse.classList.remove('mouse-onview');
+            })
+            origin.addEventListener('mousemove', function(e){
+                //console.log(e.clientX - mouseDimension[1]);
+                mouse.style.transform = "translate(" + e.clientX + 'px,' + (e.clientY - origin.getBoundingClientRect().y) + 'px)';
+            })
+            origin.addEventListener('wheel', function(e){
+                transforms = mouse.style.transform.split(',');
+                currentY = parseInt(mouse.style.transform.split(',')[1])
+                transforms[1] = (currentY + e.deltaY) + 'px)';
+                console.log(e.y);
+                mouse.style.transform = transforms[0] + ',' + transforms[1];
+            })
+        }
+        origin();
     }, 100)
 }
 

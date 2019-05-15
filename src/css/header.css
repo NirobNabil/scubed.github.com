@@ -6,47 +6,56 @@
   z-index: 10;
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
-  .header .background {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: white;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    transition: .3s;
-    transition-timing-function: ease-out;
-    top: -100%; }
-  .header .name {
-    margin-left: 4vw;
-    padding: 1.3em;
-    font-family: code_regular;
-    font-size: 1.6em; }
-  .header .nav {
-    width: 25%;
-    display: flex;
-    align-self: center; }
-  .header .link {
-    position: relative;
-    z-index: 2;
-    padding: 1.3em 1.5em;
-    font-family: raleway_regular; }
-    .header .link a {
-      position: relative; }
-    .header .link a:after {
-      content: '';
-      background: black;
-      width: 0%;
-      height: 1px;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      transition: .3s; }
-    .header .link a:hover:after {
-      width: 100%; }
+  justify-content: space-between;
+}
+.header .background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
+  top: -100%;
+}
+.header .name {
+  margin-left: 4vw;
+  padding: 1.3em;
+  font-family: code_regular;
+  font-size: 1.6em;
+}
+.header .nav {
+  width: 25%;
+  display: flex;
+  align-self: center;
+}
+.header .link {
+  position: relative;
+  z-index: 2;
+  padding: 1.3em 1.5em;
+  font-family: raleway_regular;
+}
+.header .link a {
+  position: relative;
+}
+.header .link a:after {
+  content: "";
+  background: black;
+  width: 0%;
+  height: 1px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transition: 0.3s;
+}
+.header .link a:hover:after {
+  width: 100%;
+}
 
 .header:hover .background {
-  top: 0%; }
+  top: 0%;
+}
 
 /*# sourceMappingURL=header.css.map */

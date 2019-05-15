@@ -1,12 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+}
 
 h1, h2, h3, h4, a {
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+}
 
 /*# sourceMappingURL=global.css.map */
