@@ -1,11 +1,24 @@
 import React, {Component} from "react";
 import styled from "styled-components"
-import landing from "./home/landing"
+import Landing from "./home/landing"
+import stylevars from "../../stylevars"
 
-class home extends Component{
+
+let HomeContainer = styled.div`
+    height     : 100vh;
+	perspective: ${stylevars.home.perspective};
+	overflow   : scroll;
+	overflow-x : hidden;
+`
+
+class Home extends Component{
     render(){
         return (
-            //<Landing></Landing>
+            <HomeContainer>
+                <Landing></Landing>
+            </HomeContainer>
         )
     }
 }
+
+export default Home

@@ -30,7 +30,7 @@ const HeaderContainer = styled.div`
 const Name = styled.div`
     margin-left     : 4vw;
     padding    : 1.3em;
-    font-family: CODE_bold;
+    font-family: codebold;
     font-size  : 1.6em;
 `
 
@@ -44,7 +44,7 @@ const Link = styled.div`
     position: relative;
     z-index    : 2;
     padding    : 1.3em 1.5em;
-    font-family: realeway_regular;
+    font-family: ralewayregular;
     a{
         position: relative;
     }
