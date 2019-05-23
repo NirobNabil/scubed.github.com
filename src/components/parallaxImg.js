@@ -4,11 +4,13 @@ import stylevars from "../stylevars"
 
 let Container = styled.div`
     position       : relative;
-    height         : ${ props => props.height || "32vw" };
+    height         : 32vw;
+    width          : 100%;
     transform-style: preserve-3d;
     img{
         position        : relative;
-        height          : 100%;
+        height          : ${ props => props.height || "100%" }
+        width           : ${ props => props.width || "auto" };
         filter          : grayscale(${ props => props.grayscale || "100%" });
         transform-origin: 50% 50%;
         transform       : translateZ(${ props => props.translateZ }) scale(${ props => (parseInt(props.perspective) - parseInt(props.translateZ))/parseInt(props.perspective) });
@@ -62,6 +64,7 @@ class ParallaxImg extends Component{
         let imgContainer = this.parallax_img_container.current
         let mm_translateZ = parseInt(this.props.translateZ);
         let X = parseInt(imgContainer.getBoundingClientRect().x) + (parseInt(getStyles(imgContainer).width) / 2);                   //x coordinate of the element's middle point
+        console.log(parseInt(getStyles(imgContainer).width) / 2);
         let mm_left = X - (viewport_width/2);                                                                                     //distance of mm from the middle of the viewport
         console.log(this.props.perspective)
         imgContainer.querySelector('img').style.left = (( mm_left * Math.abs(mm_translateZ) ) / perspective) + 'px';
@@ -69,7 +72,7 @@ class ParallaxImg extends Component{
     }
     render(){
         return (
-            <Container ref={this.parallax_img_container} translateZ={this.props.translateZ} grayscale={this.props.grayscale} height={this.props.height} perspective={this.props.perspective}>
+            <Container ref={this.parallax_img_container} height={this.props.height} width={this.props.width} translateZ={this.props.translateZ} grayscale={this.props.grayscale} height={this.props.height} perspective={this.props.perspective}>
                 <img src= { this.props.src }></img>
             </Container>
         )

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components"
+import { Link } from 'react-router-dom'
 
 const Background = styled.div`
     position: absolute;
@@ -18,7 +19,7 @@ const HeaderContainer = styled.div`
     top            : 0;
 	position       : fixed;
 	width          : 100%;
-	z-index        : 10;
+	z-index        : 20 !important;
 	display        : flex;
 	flex-direction : row;
 	justify-content: space-between;
@@ -40,7 +41,7 @@ const Nav = styled.div`
     align-self: center;
 `
 
-const Link = styled.div`
+const NavLink = styled.div`
     position: relative;
     z-index    : 2;
     padding    : 1.3em 1.5em;
@@ -75,12 +76,12 @@ class header extends Component{
             <HeaderContainer>
                 <Background></Background>
                 <Name>
-                    <h3>scubed</h3>
+                    <Link to="/"><h3>scubed</h3></Link>
                 </Name>
                 <Nav>
-                    <Link><a href="#">Projects </a></Link>
-                    <Link><a href="#"> Tech </a></Link>
-                    <Link><a href="#"> Contact </a></Link>
+                    <NavLink><Link to="/Studio">Studio </Link></NavLink>
+                    <NavLink><Link to="#"> Tech </Link></NavLink>
+                    <NavLink><Link to="#"> Contact </Link></NavLink>
                 </Nav>
             </HeaderContainer>
         )

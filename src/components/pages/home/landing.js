@@ -58,7 +58,7 @@ class ParallaxImgContainer extends Component{
 }
 class Landing extends Component{
     render(){
-        console.log(stylevars.home.perspective)
+        //console.log(stylevars.home.perspective)
         return (
             <LandingContainer>
                 <LandingText>Lorem ipsum dolor sit amet lorem lorem Eius adipisci vitae omnis sit ut eaque voluptatem </LandingText>
