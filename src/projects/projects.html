@@ -7,13 +7,15 @@
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" type="text/css" href="../css/global.css">
     <link rel="stylesheet" type="text/css" href="../css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/pagetransitions.css">
 </head>
 <body>
 
+    <main id="swup" class="transition-swipeup">
     <div class="header">
         <div class="background"></div>
         <div class="name">
-            <h3>scubed</h3>
+            <a href="../index.html"><h3>scubed</h3></a>
         </div>
         <div class="nav">
             <div class="link"><a href="#">Projects </a></div>
@@ -21,7 +23,7 @@
             <div class="link"><a href="#"> Contact </a></div>
         </div>
     </div>
-    
+
     <div class="projects-container">
 		<div class="landing-container">
 			<div class="logo">
@@ -41,7 +43,7 @@
                 </p>
             </div>
         </div>
-        <div class="skills-pasion-container">
+        <div class="skills-passion-container">
             <div class="skills-container">
                 <p class="title">Skills</p>
                 <li>Strategy</li>
@@ -148,7 +150,10 @@
                 </div>
             </div>
     </div>
+    </main>
 
     <script type="text/javascript" src="../js/projects.js"></script>
+    <script src="../js/swup.js"></script>
+    <script src="../js/router.js"></script>
 
 </body>

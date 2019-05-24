@@ -17,7 +17,7 @@ function getStyles(selector){
     }else{ 
         elem = getElem(selector);
     }
-    console.log(elem);
+    //console.log(elem);
     return window.getComputedStyle(elem);
 }
 
@@ -76,7 +76,7 @@ function init(){
 
     //loads the particle js animation
     particlesJS.load('particles-js', 'settings/particlesjs-config.json', function() {
-        console.log('callback - particles.js config loaded');
+        //console.log('callback - particles.js config loaded');
     });
 
     //initializes smooth scrolling on home-container

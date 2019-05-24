@@ -8,6 +8,9 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.header:hover {
+  color: black;
+}
 .header .background {
   position: absolute;
   height: 100%;
@@ -56,6 +59,11 @@
 
 .header:hover .background {
   top: 0%;
+}
+
+.header:hover {
+  transition-delay: 0.1s;
+  color: black !important;
 }
 
 /*# sourceMappingURL=header.css.map */

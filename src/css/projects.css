@@ -63,28 +63,28 @@
   text-align: center;
 }
 
-.skills-pasion-container {
+.skills-passion-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.skills-pasion-container div {
+.skills-passion-container div {
   padding: 0em 3rem;
   font-family: quicksand_medium;
   width: 18rem;
 }
-.skills-pasion-container div .title {
+.skills-passion-container div .title {
   font-size: 0.9rem;
   padding-bottom: 0.4rem;
   font-family: monospace;
   margin: 0.5em 0em;
 }
-.skills-pasion-container div li {
+.skills-passion-container div li {
   line-height: 1.2em;
   font-size: 1.9em;
   list-style-type: none;
 }
-.skills-pasion-container div p {
+.skills-passion-container div p {
   font-family: quicksand_medium;
   line-height: 1.4em;
   font-size: 1.1em;

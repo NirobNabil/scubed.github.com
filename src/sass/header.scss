@@ -10,6 +10,9 @@ $header-font-size: 1.6em;
 	display        : flex;
 	flex-direction : row;
 	justify-content: space-between;
+	&:hover{
+		color: black;
+	}
 	.background{
 		position: absolute;
 		height: 100%;
@@ -59,4 +62,8 @@ $header-font-size: 1.6em;
 }
 .header:hover .background{
 	top: 0%;
+}
+.header:hover{
+	transition-delay: .1s;
+	color: black !important;
 }

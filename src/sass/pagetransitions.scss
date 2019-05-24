@@ -1,0 +1,7 @@
+.transition-swipeup {
+    transition: 1s;
+    transform: translateY(0px)
+}
+html.is-animating .transition-fade{
+    transform: translateY(-500px);
+}
