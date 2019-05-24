@@ -122,7 +122,7 @@ class ProjectClass extends Component {
         return(
             <Project>
                 <Spacer></Spacer>
-                <ProjectName>{this.props.projectName}</ProjectName>
+                <ProjectName className="project-name">{this.props.projectName}</ProjectName>
                 <Spacer></Spacer>
                 <ProjectThumbnail>
                     <ParallaxImg height="auto" width="100%" grayscale="0%" perspective={stylevars.home.perspective} src={ this.props.src } translateZ="-5px"></ParallaxImg>
@@ -163,7 +163,7 @@ class ProjectsClass extends Component {
                             return <ProjectClass projectName={projects[i].name} src={projects[i].img}></ProjectClass>
                         })
                     }
-                    <ShowMore href="#">
+                    <ShowMore href="#" className="show-more">
                         <div>
                             <span>Show more</span>
                         </div>

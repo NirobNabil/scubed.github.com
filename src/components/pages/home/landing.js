@@ -61,7 +61,7 @@ class Landing extends Component{
         //console.log(stylevars.home.perspective)
         return (
             <LandingContainer>
-                <LandingText>Lorem ipsum dolor sit amet lorem lorem Eius adipisci vitae omnis sit ut eaque voluptatem </LandingText>
+                <LandingText className="landing-text">Lorem ipsum dolor sit amet lorem lorem Eius adipisci vitae omnis sit ut eaque voluptatem </LandingText>
                 <FixedAnimatingObjects>
                     <ParallaxImgContainer left={100 - parseInt(containerWidth) + "vw"} top="20%" src= {landing1}></ParallaxImgContainer>
                     <ParallaxImgContainer left={60 - parseInt(containerWidth) + "vw"} top="65%" src= {landing2}></ParallaxImgContainer>

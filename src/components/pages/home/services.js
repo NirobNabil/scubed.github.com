@@ -63,7 +63,7 @@ const SkillList = styled.div`
 class SkillsList extends Component {
     render(){
         return (
-            <Skill>
+            <Skill className="skill">
                 <h2 class="skill-name">{this.props.skillGroup}</h2>
                 <SkillList>
                     {this.props.skillNames
@@ -123,7 +123,6 @@ const skills = {
 class Services extends Component{
 
     render(){
-        console.log(`xdxd ${<br></br>} xdxd`)
         return (
             <ServicesContainer>
                 <SkillsContainer>
@@ -134,7 +133,7 @@ class Services extends Component{
                         })
                     }
                 </SkillsContainer>
-                <TechContainer>
+                <TechContainer className="tech-container">
                     <TechContainerTitle>tech and others</TechContainerTitle>
                     <Text><p>consectetur deleniti labore et reprehenderit cum quas aut non alias itaque. Omnis nam tempore impedit culpa voluptatum.	Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aut nesciunt architecto atque recusandae consectetur repellat odit dolorum suscipit culpa inventore iure sint rem illum iusto, aspernatur molestias magnam vitae!</p></Text>
                     <a href="#">

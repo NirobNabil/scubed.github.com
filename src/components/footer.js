@@ -98,17 +98,17 @@ class FooterClass extends Component{
             <Footer>
                 <FooterBack><img src={footerBackImg}></img></FooterBack>
                 <MainFooter>
-                    <ContactInfoContainer>
+                    <ContactInfoContainer className="contact-info-container">
                         <Info><h3>E-mail</h3> <span>loremupsum@scubed.org</span></Info>
                         <Info><h3>Call us</h3> <span>+8801848333385</span></Info>
                         <Info><h3>Address</h3> <span>3/7/1 johnson road, dhaka nagar siddiqui plaza, B/11</span></Info>
                     </ContactInfoContainer>
-                    <AboutUs>
+                    <AboutUs className="about-us">
                         <Headline><h1>S<sup>3</sup></h1></Headline>
                         <Description> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum sit voluptatum, aliquam, earum perferendis quae magnam ad illo dolore illum, praesentium aperiam at hic architecto fugiat ab error eligendi odio.</Description>
                     </AboutUs>
                 </MainFooter>
-                <SocialLinks>
+                <SocialLinks className="social-links">
                     <a href="#"><img  src= {facebook}></img></a>
                     <a href="#"><img  src= {github}></img></a>
                     <a href="#"><img  src= {twitter}></img></a>
