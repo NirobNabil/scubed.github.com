@@ -79,8 +79,8 @@ class header extends Component{
                     <Link to="/"><h3>scubed</h3></Link>
                 </Name>
                 <Nav>
+                    <NavLink><Link to="/Projects">Projects </Link></NavLink>
                     <NavLink><Link to="/Studio">Studio </Link></NavLink>
-                    <NavLink><Link to="#"> Tech </Link></NavLink>
                     <NavLink><Link to="#"> Contact </Link></NavLink>
                 </Nav>
             </HeaderContainer>

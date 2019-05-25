@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
 import ParallaxImg from '../../parallaxImg.js';
-import landing1 from '../../../assets/landing2.png';
-import landing2 from '../../../assets/landing1.jpg';
-import landing3 from '../../../assets/dummy.jpg';
 import stylevars from '../../../stylevars'
 
 
@@ -132,35 +129,30 @@ class ProjectClass extends Component {
     }
 }
 
-const projects = {
-    'Electronics Based Startup1': {
-        name: ["Electronics Based", <br></br> ,"Startup1"], //this name represents a jsx object
-        img: landing1
-    },
-    'Electronics Based Startup2': {
-        name: ["Electronics Based", <br></br> ,"Startup2"],
-        img: landing2
-    },
-    'Electronics Based Startup3': {
-        name: ["Electronics Based", <br></br> ,"Startup1"], //this name represents a jsx object
-        img: landing1
-    },
-    'Electronics Based Startup4': {
-        name: ["Electronics Based", <br></br> ,"Startup2"],
-        img: landing2
-    },
-}
+
 
 
 class ProjectsClass extends Component {
+    componentDidUpdate(){
+        if(this.props.sr){
+            //console.log("projects updated")
+            this.props.sr.reveal('.project-name,  .show-more',{
+                distance: '300px',
+            });
+        }
+    }
+    componentWillUnmount(){
+        //console.log("projects cleaned")
+        //this.props.sr.clean();
+    }
     render(){
         return (
             <PreviousProjects>
                 <Headline> <h1>Previous projects</h1> </Headline>
                 <Projects>
-                    {Object.keys(projects)
+                    {Object.keys(this.props.projects)
                         .map(i => {
-                            return <ProjectClass projectName={projects[i].name} src={projects[i].img}></ProjectClass>
+                            return <ProjectClass projectName={this.props.projects[i].name} src={this.props.projects[i].img}></ProjectClass>
                         })
                     }
                     <ShowMore href="#" className="show-more">

@@ -1,20 +1,11 @@
-import React, {Component} from "react";
-import styled, { keyframes } from "styled-components"
-import Landing from "./home/landing"
-import Services from "./home/services"
-import Projects from "./home/projects"
-import Footer from "../footer"
-import stylevars from "../../stylevars"
-import { getElem, getStyles } from '../../globalFuncs'
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import Projects from './home/projects'
 import landing1 from '../../assets/landing2.png';
 import landing2 from '../../assets/landing1.jpg';
 import landing3 from '../../assets/dummy.jpg';
 
-let HomeContainer = styled.div`
-    height     : 100vh;
-	perspective: ${stylevars.home.perspective};
-	overflow   : scroll;
-	overflow-x : hidden;
+const PageWrapper = styled.div`
     background: white;
 `
 
@@ -37,21 +28,14 @@ const projects = {
     },
 }
 
-class Home extends Component{
-    componentDidMount(){
-        console.log("mounted")
-        this.forceUpdate()
-    }
+class ProjectsPage extends Component{
     render(){
         return (
-            <HomeContainer className="home-container">
-                <Landing sr={this.props.sr}></Landing>
-                <Services sr={this.props.sr}></Services>
+            <PageWrapper>
                 <Projects sr={this.props.sr} projects={projects}></Projects>
-                <Footer sr={this.props.sr}></Footer>
-            </HomeContainer>
+            </PageWrapper>
         )
     }
 }
 
-export default Home
+export default ProjectsPage

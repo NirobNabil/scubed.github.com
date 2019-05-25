@@ -57,6 +57,18 @@ class ParallaxImgContainer extends Component{
     }
 }
 class Landing extends Component{
+    componentDidUpdate(){
+        if(this.props.sr){
+            //this.props.sr.sync();
+            //console.log("landing updated")
+            this.props.sr.reveal('.landing-text', {delay: 400});
+        }
+    }
+    componentWillUnmount(){
+        //console.log("landing cleaned")
+        //this.props.sr.destroy();
+        console.log(this.props.sr.store)
+    }
     render(){
         //console.log(stylevars.home.perspective)
         return (
