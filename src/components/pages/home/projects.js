@@ -136,9 +136,9 @@ class ProjectsClass extends Component {
     componentDidUpdate(){
         if(this.props.sr){
             //console.log("projects updated")
-            this.props.sr.reveal('.project-name,  .show-more',{
-                distance: '300px',
-            });
+            // this.props.sr.reveal('.project-name,  .show-more',{
+            //     distance: '300px',
+            // });
         }
     }
     componentWillUnmount(){

@@ -9,6 +9,7 @@ import { getElem, getStyles } from '../../globalFuncs'
 import landing1 from '../../assets/landing2.png';
 import landing2 from '../../assets/landing1.jpg';
 import landing3 from '../../assets/dummy.jpg';
+import ScrollReveal from 'scrollreveal'
 
 let HomeContainer = styled.div`
     height     : 100vh;
@@ -38,17 +39,58 @@ const projects = {
 }
 
 class Home extends Component{
+    constructor(){
+        super();
+        this.sr = null
+    }
     componentDidMount(){
-        console.log("mounted")
-        this.forceUpdate()
+        console.log("mounted");
+        //instantiating new scrollreveal instance on every mount
+        const defaults = {
+            delay: 100,
+            duration: 600,
+            distance: '120px',
+            container: document.querySelector('.home-container'),
+            origin: 'bottom',
+            reset: false,
+        }
+        const sreveal = ScrollReveal(defaults);
+        sreveal.debug = true; 
+        this.sr = sreveal
+        window.sr = sreveal
+
+        //calling reveals for elements
+        this.sr.reveal('.app', {delay: 400});
+        this.sr.reveal('.landing-text', {delay: 400});
+        this.sr.reveal('.contact-info-container > *, .about-us > *')
+        this.sr.reveal(document.querySelectorAll('.tech-container *'), {
+            //distance: '450px',
+            interval: 40,
+            delay: 100
+        });
+        this.sr.reveal('.skill',{
+            interval: 40,
+        })
+        this.sr.reveal('.project-name,  .show-more',{
+            distance: '300px',
+        });
+        //this.revealCalled = true
+        console.log("updated home")
+        console.log(this.sr.store);
+        //this.forceUpdate()
+    }
+    componentWillUnmount(){
+        this.sr.destroy();
+        console.log("cleaned home")
+        console.log(this.sr.store);
     }
     render(){
         return (
             <HomeContainer className="home-container">
-                <Landing sr={this.props.sr}></Landing>
-                <Services sr={this.props.sr}></Services>
-                <Projects sr={this.props.sr} projects={projects}></Projects>
-                <Footer sr={this.props.sr}></Footer>
+                <Landing></Landing>
+                <Services></Services>
+                <Projects projects={projects}></Projects>
+                <Footer></Footer>
             </HomeContainer>
         )
     }

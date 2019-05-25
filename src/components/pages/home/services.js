@@ -123,27 +123,27 @@ const skills = {
 class Services extends Component{
     componentDidUpdate(){
         if(this.props.sr){
-            console.log("skill before update");
-            console.log(this.props.sr.store)
-            this.props.sr.reveal(document.querySelectorAll('.tech-container *'), {
-                //distance: '450px',
-                interval: 40,
-                delay: 100
-            });
-            this.props.sr.reveal('.skill',{
-                interval: 40,
-            })
-            console.log("skill after update")
-            console.log(this.props.sr.store)
+            // console.log("skill before update");
+            // console.log(this.props.sr.store)
+            // this.props.sr.reveal(document.querySelectorAll('.tech-container *'), {
+            //     //distance: '450px',
+            //     interval: 40,
+            //     delay: 100
+            // });
+            // this.props.sr.reveal('.skill',{
+            //     interval: 40,
+            // })
+            // console.log("skill after update")
+            // console.log(this.props.sr.store)
         }
     }
     componentWillUnmount(){
-        console.log("skill before clean")
-        console.log(this.props.sr.store)
-        this.props.sr.clean('.skill');
-        this.props.sr.clean(document.querySelectorAll('.tech-container *'))
-        console.log("skill after clean")
-        console.log(this.props.sr.store)
+        // console.log("skill before clean")
+        // console.log(this.props.sr.store)
+        // this.props.sr.clean('.skill');
+        // this.props.sr.clean(document.querySelectorAll('.tech-container *'))
+        // console.log("skill after clean")
+        // console.log(this.props.sr.store)
     }
     render(){
         return (

@@ -95,11 +95,11 @@ const SocialLinks = styled.div`
 class FooterClass extends Component{
     componentDidUpdate(){
         if(this.props.sr){
-            this.props.sr.reveal('.contact-info-container > *, .about-us > *')
+            // this.props.sr.reveal('.contact-info-container > *, .about-us > *')
         }
     }
     componentWillUnmount(){
-        this.props.sr.clean();
+        // this.props.sr.clean();
     }
     render(){
         return (
