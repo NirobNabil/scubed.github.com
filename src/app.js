@@ -1,32 +1,28 @@
-import React, { Component } from "react"
-import { createGlobalStyle, keyframes } from 'styled-components'
-import ScrollReveal from 'scrollreveal'
-import GlobalFonts from "./fonts.js"
-import Header from './components/header'
-import Home from "./components/pages/home.js"
-import Studio from "./components/pages/studio.js"
-import Projects from "./components/pages/projects.js"
-import Footer from "./components/footer"
-import { 
-  Route, 
-  Switch, 
-  BrowserRouter,
-} from 'react-router-dom';
-import { 
-  CSSTransition, 
-  TransitionGroup 
-} from 'react-transition-group';
-
+import React, { Component } from "react";
+import { createGlobalStyle, keyframes } from "styled-components";
+import ScrollReveal from "scrollreveal";
+import GlobalFonts from "./fonts.js";
+import Header from "./components/header";
+import Home from "./components/pages/home.js";
+import Studio from "./components/pages/studio.js";
+import Projects from "./components/pages/projects.js";
+import ProjectPage from "./components/pages/project.js";
+import Contact from "./components/pages/Contact.js";
+import Footer from "./components/footer";
+import landing1 from "./assets/landing2.png";
+import landing2 from "./assets/landing1.jpg";
+import landing3 from "./assets/dummy.jpg";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 let slideIn = keyframes`
   from {
-      transform: translateY(100vh);
-      visibility: visible;
+    transform: translateY(100vh);
   }
   to {
-      transform: translateY(0vh);
+    transform: translateY(0vh);
   }
-`
+`;
 
 let slideOut = keyframes`
   from {
@@ -35,7 +31,7 @@ let slideOut = keyframes`
   to {
       transform: translateY(-100vh);
   }
-`
+`;
 
 let GlobalStyles = createGlobalStyle`
   body{
@@ -52,6 +48,7 @@ let GlobalStyles = createGlobalStyle`
 
   //custom scrollbar
   ::-webkit-scrollbar{
+    display: none;
     width: .5vw;
     background: transparent;
   }
@@ -65,65 +62,86 @@ let GlobalStyles = createGlobalStyle`
 
   &.page-enter{
     position: absolute;
-    z-index: 10;
+    z-index: 1 !important;
     animation-delay: 0s;
-    animation: ${slideIn} 1s forwards;
+    animation: ${slideIn} 1s forwards cubic-bezier(.77,0,.36,1);
   }
   &.page-exit{
-    z-index: -10;
-    animation: ${slideOut} 1.6s forwards ease-out;
+    position: absolute;
+    z-index: -100 !important;
+    animation: ${slideOut} 1.6s forwards ease-in-out;
   }
 
-`
-
+`;
 
 class App extends Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
+    this.supportsHistory = "pushState" in window.history;
     this.state = {
-        'sr': null,
-        'uri': null
-    }
-    this.update = function(){
-      console.log("appupdate")
-      this.state.sr.reveal('.landing-text', {delay: 400});
-    }.bind(this)
-  }
-  componentDidMount(){
-    //this.setState({ sr: sreveal });
-
-  }
-  componentDidUpdate(){
-    //console.log("upadte");
-    //this.state.sr.clean();
+      currentPath: null
+    };
+    this.onRouterChange = (prevState, nextState) => {
+      console.log("prevstate");
+      console.log(prevState);
+    };
   }
   render() {
-    const supportsHistory = 'pushState' in window.history;
     return (
       <div className="App">
-        <GlobalFonts></GlobalFonts>
-        <GlobalStyles></GlobalStyles>
-          <BrowserRouter onChange={this.update} forceRefresh={!supportsHistory}>
-          <Header></Header>
+        <GlobalFonts />
+        <GlobalStyles />
+        <BrowserRouter forceRefresh={!this.supportsHistory}>
+          <Header />
           <Route
             render={({ location }) => {
-              //this.setState({uri: location})
               return (
                 <>
-                <TransitionGroup component={null}>
-                  <CSSTransition timeout={1500} classNames="page" key={location.key}>
-                    <Switch location={location}>
-                      <Route exact path="/" render={() => <Home sr={this.state.sr}></Home>}/>
-                      <Route path="/studio" render={() => <Studio sr={this.state.sr}></Studio>}/>
-                      <Route path="/Projects" render={() => <Projects sr={this.state.sr}></Projects>}/>
-                    </Switch>
-                  </CSSTransition>
-                </TransitionGroup>   
+                  <TransitionGroup component={null}>
+                    <CSSTransition
+                      timeout={1500}
+                      classNames="page"
+                      key={location.key}
+                    >
+                      <Switch location={location}>
+                        <Route
+                          exact
+                          path="/"
+                          render={({ match }) => {
+                            return <Home match={match} />;
+                          }}
+                        />
+                        <Route path="/studio" render={() => <Studio />} />
+                        <Route
+                          exact
+                          path="/Projects"
+                          render={({ match }) => {
+                            console.log(match);
+                            return <Projects match={match} />;
+                          }}
+                        />
+                        <Route
+                          exact
+                          path={`/Projects/:name`}
+                          render={({ match }) => {
+                            return <ProjectPage match={match.params.name} />;
+                          }}
+                        />
+                        <Route
+                          exact
+                          path={`/Contact`}
+                          render={({ match }) => {
+                            return <Contact />;
+                          }}
+                        />
+                      </Switch>
+                    </CSSTransition>
+                  </TransitionGroup>
                 </>
-              )
-            }}/>
-          </BrowserRouter>
-          {/* <Studio></Studio> */}
+              );
+            }}
+          />
+        </BrowserRouter>
       </div>
     );
   }
