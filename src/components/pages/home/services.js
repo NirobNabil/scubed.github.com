@@ -33,6 +33,7 @@ const Skill = styled.div`
     max-height                : ${servicesFontSize + .3 + 'em'};
     overflow                  : hidden;
     transition                : .6s;
+    transition-delay          : .1s;
     cursor                    : pointer;
     transition-timing-function: ease-in-out;
     &:hover{
@@ -41,13 +42,13 @@ const Skill = styled.div`
 `
 
 const SkillList = styled.div`
-    span{
+    li{
         padding-left: 1.3em;
     }
     li:before{
         margin-top : .5em;
         position   : absolute;
-        margin-left: -1em;
+        margin-left: -5em;
         height     : 2px;
         width      : 9px;
         background : black;
@@ -55,7 +56,7 @@ const SkillList = styled.div`
         transition : .2s;
     }
     li:hover:before{
-        margin-left: .2em;
+        margin-left: -1em;
     }
 `
 
@@ -112,11 +113,19 @@ const More = styled.div`
     }
 `
 
+// const skills = {
+//     'WEB': ['E-commerce solutions', 'Content management solutions', 'Web hosting', 'Web designing', 'Consultancy & services'],
+//     'SOFTWARE': ['Enterprise Resource Planning (ERP) software', 'Accounting and Invoicing software', 'Customer relationship management (CRM) software', 'Project management software'],
+//     'TECH SUPPORT': ['Digital marketing solutions', 'PC installation and support', 'IT feasibility studies', 'Computing Network Design', 'Server Management Support'],
+//     'OPTIMIZATIONS': ['Search Engine Optimization', 'Social Media Optimization'],
+//     'PC INTEGRATION': ['Custom PC integration', 'Premium support and consultancy '],
+//     'CREATIVE DIGITAL LAB': ['Digital brand identity creation', 'Graphics design']
+// }
+
 const skills = {
-    'WEB DESIGN': ['networking', 'react/vue', 'full stack', 'site design', 'abracadabra'],
-    'NETWORKING': ['dabracabra', 'lorem', 'ipsum'],
-    'APP DEV': ['doler', 'motor', 'abra', 'cadabra'],
-    'OTHERS': ['abra', 'cadab', 'dabra']
+    "AUTOMATION": ['Web Development', 'Software Development', 'Tech Support', 'Optimizations'],
+    "INNOVATION": ['S Cubed Creative Digital Lab'],
+    "INTEGRATION": ['PC Integration'],
 }
 
 
@@ -158,7 +167,8 @@ class Services extends Component{
                 </SkillsContainer>
                 <TechContainer className="tech-container">
                     <TechContainerTitle>tech and others</TechContainerTitle>
-                    <Text><p>consectetur deleniti labore et reprehenderit cum quas aut non alias itaque. Omnis nam tempore impedit culpa voluptatum.	Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aut nesciunt architecto atque recusandae consectetur repellat odit dolorum suscipit culpa inventore iure sint rem illum iusto, aspernatur molestias magnam vitae!</p></Text>
+                    <Text><p>S Cubed technologies is a tech innovation company that specializes in service automation and intelligent systems. Our team works diligently to deliver the best possible tech solutions. our mission is to create simple solutions to complex tasks of life with the help of automation.
+</p></Text>
                     <a href="#">
                         <More><span>more</span></More>
                     </a>

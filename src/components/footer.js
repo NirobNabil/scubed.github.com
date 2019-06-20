@@ -113,7 +113,7 @@ class FooterClass extends Component{
                     </ContactInfoContainer>
                     <AboutUs className="about-us">
                         <Headline><h1>S<sup>3</sup></h1></Headline>
-                        <Description> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum sit voluptatum, aliquam, earum perferendis quae magnam ad illo dolore illum, praesentium aperiam at hic architecto fugiat ab error eligendi odio.</Description>
+                        <Description>S Cubed offers three steps to efficient digitalization. Automation, innovation and integration. With our premium services we want you to experience the future, now.</Description>
                     </AboutUs>
                 </MainFooter>
                 <SocialLinks className="social-links">

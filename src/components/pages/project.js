@@ -127,8 +127,6 @@ class Project extends Component {
     super(props);
     console.log(this.props.match);
     Object.keys(projects).map(projectName => {
-      console.log("inside");
-      console.log(this);
       if (projects[projectName].url == this.props.match) {
         this.project = projects[projectName];
       }
@@ -149,36 +147,18 @@ class Project extends Component {
           </ProjectImg>
           <ProjectDetailsContainer>
             <ProjectHistory>
-              2018
-              <HistoryBlockquote>
-                Strategy User experience Art direction Admin system Back end
-                Front end
-              </HistoryBlockquote>
-              <HistoryBlockquote>
-                Awwwards HM
-                <br />
-                Cssdsgn
-                <br />
-                Commarts
-                <br />
-              </HistoryBlockquote>
+              {this.project.year}
+              { this.project.highlights.map( (obj) => {
+                return (
+                  <HistoryBlockquote>
+                    { obj }
+                  </HistoryBlockquote>
+                )
+                }) 
+              }
             </ProjectHistory>
             <ProjectSummary>
-              Closed at the end of 2016 for renovation, the Théâtre de la Ville
-              in Paris was committed to redesign and modernize its digital tools
-              for several years. To this goal was added the need of being able
-              to show and book its outdoor programming during the works, in more
-              than 20 different locations. Three main dynamics were thus put
-              forward: the programming, the venues and the “Théâtre sans
-              frontières”, a space dedicated to news and essays. On the
-              technical side, a show-oriented API was developed to process all
-              datas and differentiate contents. On one hand, the permanent
-              information is therefore administered directly from the CMS’ back
-              office. On the other hand, the raw content related to the
-              programming is entered in the API. Thanks to this technical
-              modulation, it was possible to deliver a fast and light website
-              while offering to the Theatre’s team a powerful everyday work
-              tool.
+              {this.project.details}
             </ProjectSummary>
           </ProjectDetailsContainer>
           <SingleImgContainer>

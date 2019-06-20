@@ -82,13 +82,13 @@ const AboutImg = styled.div`
 
 const AboutText = styled.div`
   position: relative;
-  width: 20em;
+  width: 23em;
   padding: 8rem 10rem;
   p {
     font-family: quicksandmedium;
-    font-size: 2em;
+    font-size: 1.8em;
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
 `;
 
@@ -101,8 +101,7 @@ class About extends Component {
         </AboutImg>
         <AboutText>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Consectetur, quibusdam provident quos inventore, et
+          We, at S Cubed are obsessed with creating better machines at a cheaper cost, which is the main drive for innovation. We like to stay updated on the bleeding edge of modern technology and start improving from there.
           </p>
         </AboutText>
       </AboutContainer>
@@ -132,11 +131,10 @@ const SkillsPassionContainer = styled.div`
   }
 `;
 
-const Title = styled.div`
+const Title = styled.span`
   font-size: 0.9rem;
   padding-bottom: 0.4rem;
   font-family: monospace;
-  margin: 0.5em 0em;
 `;
 
 class SkillPassion extends Component {
@@ -157,13 +155,7 @@ class SkillPassion extends Component {
         <div>
           <Title>Passion</Title>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-            veniam id eaque deserunt. Expedita ab dolore vel hic porro aut rerum
-            voluptate quo qui iusto animi, facilis sit doloremque adipisci?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            perspiciatis facere nostrum voluptates, blanditiis ut nemo iure
-            ipsam neque cupiditate, voluptatibus repudiandae tenetur sunt
-            officiis maiores excepturi cum at mollitia?
+          S Cubed has a mission of automating industries, workplaces and homes to create value to lives. Automation is the future, it can be used in your household and even in the production line of an industry. S Cubed is opening doors to the future by providing better technology focusing on three key factors: Sustainability, Security and Simplicity.
           </p>
         </div>
       </SkillsPassionContainer>
@@ -240,13 +232,13 @@ class PostSpecialTextClass extends Component {
     return (
       <div>
         <PostSpecialText>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-          veniam id eaque deserunt. Expedita ab dolore vel hic porro aut rerum
-          voluptate quo qui iusto animi, facilis sit doloremque adipisci? Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Itaque perspiciatis
-          facere nostrum voluptates, blanditiis ut nemo iure ipsam neque
-          cupiditate, voluptatibus repudiandae tenetur sunt officiis maiores
-          excepturi cum at mollitia?
+        S Cubed has started working since April of 2015. 
+        And has successfully provided service to corporate offices, 
+        educational institutions and non profit organizations. Our 
+        customers have always been our top priority. Our team has experts 
+        who directly contact you to understand and analyze your issues better  
+        and try to provide the best possible solution tailored to your preferences. 
+        We give customized and simple solutions to complex problems through our services.
         </PostSpecialText>
       </div>
     );
@@ -271,7 +263,7 @@ const Origin = styled.div`
   width: 21rem;
   p {
     font-family: rzregular;
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin: 0;
   }
 `;
@@ -297,7 +289,7 @@ class OriginClass extends Component {
   render() {
     return (
       <OriginContainer ref={this.originContainer}>
-        {this.state.rendered ? (
+        {this.state.rendered? (
           <Cursor
             from="origin"
             elem={this.originContainer.current}
@@ -312,9 +304,7 @@ class OriginClass extends Component {
         <Origin>
           <OriginTitle>Origin</OriginTitle>
           <p>
-            Rezo Zero is an anagram with reference to the binary language. Zero
-            serves as a starting point, the basic element of digital; a circle
-            in perpetual movement that invites creative exploration.
+          The name "S Cubed" comes from the name of our founder, Sakib Sadman Shajib. He was called S³ in school by his friends, which became a nickname soon after. Whenever people needed tech support, they'd call for S³. One person's passion became his profession and many joined their passions to create this team.
           </p>
         </Origin>
       </OriginContainer>
@@ -364,21 +354,15 @@ class TeamMemberClass extends Component {
 }
 
 const teamMembers = {
-  "Julias caeser": {
-    designation: "military general0"
+  "Sakib Sadman Shajib": {
+    designation: "Founder"
   },
-  "Julias caeser2": {
-    designation: "military general0"
+  "Md Zillur Rahman": {
+    designation: "Co founder"
   },
-  "Julias caeser3": {
-    designation: "military general0"
+  "Zawad Alam Zarif": {
+    designation: "N/A"
   },
-  "Julias caeser4": {
-    designation: "military general0"
-  },
-  "Julias caeser5": {
-    designation: "military general0"
-  }
 };
 
 class Team extends Component {
@@ -423,7 +407,7 @@ class Studio extends Component {
         {this.state.rendered ? (
           <SpecialText
             pageWrapper={this.pageWrapper.current}
-            specialText="At the heart of our work, the constant search for the juncture between aesthetics and technical performances."
+            specialText="With sustainability as our goal, we provide simple and secure tools to create and maintain your digital footprint."
             specialImg={landing3}
           />
         ) : (
@@ -436,6 +420,7 @@ class Studio extends Component {
         ) : (
           <></>
         )}
+        
         <Team />
         <Footer />
       </StudioContainer>

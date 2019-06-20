@@ -23,6 +23,11 @@ const SpecialImg = styled.div`
     max-width: 30rem;
     position: absolute;
   }
+  &.onView{
+    transition-delay: 0.3s;
+    transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49);
+    left: 5vw;
+  }
 `;
 
 const SpecialText = styled.div`
@@ -34,9 +39,19 @@ const SpecialText = styled.div`
   font-family: rzregular;
   font-size: 9rem;
   left: ${props => (props.left || 50) + "vw"};
-  opacity: ${props => props.opacity || 0.3};
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49);
+  p{
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49);
+    opacity: ${props => props.opacity || 0.3};
+  }
+  &.onView{
+    left: 30vw;
+    p{
+      opacity: 1;
+    }
+  }
 `;
 
 class SpecialTextClass extends Component {
@@ -46,37 +61,40 @@ class SpecialTextClass extends Component {
     this.specialTextContainer = React.createRef();
     this.specialText = React.createRef();
     this.specialTextCursor = React.createRef();
+    this.specialImg = React.createRef();
     this.state = {
-      rendered: false
+      specialTextRef: this.specialText,
+      rendered: false,
+      onView: false
     };
   }
   componentDidMount() {
-    // addCustomCursor(
-    //   this.specialText.current,
-    //   this.specialTextCursor.current,
-    //   "2.5rem",
-    //   this.specialTextContainer.current
-    // );
     this.setState({ rendered: true });
+    this.specialText.current.addEventListener('click', () => {
+      this.specialText.current.classList.toggle('onView');
+      this.specialImg.current.classList.toggle('onView');
+    })
   }
   render() {
     return (
       <SpecialTextContainer ref={this.specialTextContainer}>
-        <SpecialImg left={this.state.x}>
+        {this.state.rendered && this.state.specialTextRef ? (
+          <Cursor
+            elemRef={this.state.specialTextRef}
+            from="specialtext"
+            pageWrapper={this.props.pageWrapper}
+            elem={this.specialTextContainer.current}
+            //baseElem={this.specialTextContainer.current}
+            actualElem={this.specialText.current}
+            paddingOnView="2rem"
+          />
+        ) : (
+          <></>
+        )}
+        <SpecialImg left={this.state.x} ref={this.specialImg}>
           <img src={this.props.specialImg} />
         </SpecialImg>
         <SpecialText ref={this.specialText}>
-          {this.state.rendered ? (
-            <Cursor
-              from="specialtext"
-              pageWrapper={this.props.pageWrapper}
-              elem={this.specialText.current}
-              baseElem={this.specialTextContainer.current}
-              paddingOnView="2.5rem"
-            />
-          ) : (
-            <></>
-          )}
           <p>{this.props.specialText}</p>
         </SpecialText>
       </SpecialTextContainer>

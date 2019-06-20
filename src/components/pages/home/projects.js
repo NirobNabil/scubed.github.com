@@ -93,7 +93,7 @@ const Project = styled.div`
   }
 `;
 
-const ShowMore = styled.a`
+const ShowMore = styled.span`
   position: relative;
   color: black;
   padding: 1em;
@@ -280,10 +280,12 @@ class ProjectsClass extends Component {
               />
             );
           })}
-          <ShowMore href="#" className="show-more">
-            <div>
-              <span>Show more</span>
-            </div>
+          <ShowMore className="show-more">
+            <Link to="/Projects">
+              <div>
+                <span>Show more</span>
+              </div>
+            </Link>
           </ShowMore>
         </Projects>
       </PreviousProjects>
