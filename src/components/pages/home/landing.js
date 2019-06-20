@@ -13,19 +13,19 @@ let LandingContainer = styled.div`
 	height               : 170vh;
 	width                : 100%;
 	position             : relative;
-`
+`;
 
 let LandingText = styled.div`
     margin-left   : 4vw;
     font-family   : ralewayregular;
-    font-size     : 7em;
+    font-size     : 7vw;
     grid-column   : span 5;
     grid-row      : 3;
     width         : 100%;
     display       : flex;
     flex-direction: column;
     z-index       : 10;
-`
+`;
 
 let FixedAnimatingObjects = styled.div`
     position   : absolute;
@@ -34,7 +34,7 @@ let FixedAnimatingObjects = styled.div`
     display    : flex;
     height     : 100%;
     width      : 100%;
-`
+`;
 
 const containerWidth = "28vw";
 let ParallaxImageContainer = styled.div`
@@ -43,9 +43,8 @@ let ParallaxImageContainer = styled.div`
     height  : 32vw;
     overflow: hidden;
     left: ${props => props.left};
-    top: ${props => props.top}
-`
-
+    top: ${props => props.top};
+`;
 
 class ParallaxImgContainer extends Component{
     render(){
@@ -73,7 +72,14 @@ class Landing extends Component{
         //console.log(stylevars.home.perspective)
         return (
             <LandingContainer>
-                <LandingText className="landing-text">Where simplicity, sustainability, and security come together through technology and innovation. </LandingText>
+                <LandingText className="landing-text">
+                    <span>Where simplicity, </span>
+                    <span>sustainability, and </span>
+                    <span>security come </span>
+                    <span>together through </span>
+                    <span>technology and </span>
+                    <span>innovation. </span>
+                </LandingText>
                 <FixedAnimatingObjects>
                     <ParallaxImgContainer left={100 - parseInt(containerWidth) + "vw"} top="20%" src= {landing1}></ParallaxImgContainer>
                     <ParallaxImgContainer left={60 - parseInt(containerWidth) + "vw"} top="65%" src= {landing2}></ParallaxImgContainer>

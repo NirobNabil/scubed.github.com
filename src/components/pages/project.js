@@ -6,6 +6,7 @@ import projectSS from "../../assets/projectsSS.jpg";
 import SpecialText from "../specialText.js";
 import Footer from "../footer";
 import stylevars from "../../stylevars";
+import ScrollReveal from "scrollreveal"
 
 const ProjectPageContainer = styled.div`
   height: 100vh;
@@ -27,6 +28,10 @@ const ProjectImg = styled.div`
   overflow: hidden;
   left: 0vw;
   top: 8vw;
+  img{ 
+    position: relative;
+    left: 0 !important;
+  }
   //grid-row: 1 / 3;
 `;
 
@@ -125,18 +130,42 @@ const Spacer = styled.div`
 class Project extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.match);
+    this.state = {
+      rendered: false
+    }
+    this.pageContainer = React.createRef();
     Object.keys(projects).map(projectName => {
       if (projects[projectName].url == this.props.match) {
         this.project = projects[projectName];
       }
     });
   }
+  componentDidMount() {
+    this.setState({
+      rendered: true
+    });
+
+    //instantiating new scrollreveal instance on every mount
+    const defaults = {
+      delay: 100,
+      duration: 600,
+      distance: "120px",
+      container: this.pageContainer.current,
+      origin: "bottom",
+      reset: false
+    };
+    const sreveal = ScrollReveal(defaults);
+    sreveal.debug = true;
+    this.sr = sreveal;
+
+    //calling reveals for elements
+    this.sr.reveal(".project-title", { delay: (this.props.from == "homepage") ? 900 : 1000 });
+  }
   render() {
     return (
-      <ProjectPageContainer>
+      <ProjectPageContainer ref={this.pageContainer}>
         <LandingContainer>
-          <ProjectTitle>{this.project.name}</ProjectTitle>
+          <ProjectTitle className="project-title">{this.project.name}</ProjectTitle>
           <ProjectImg>
             <ParallaxImgContainer
               grayscale="0%"
@@ -167,10 +196,17 @@ class Project extends Component {
             </div>
           </SingleImgContainer>
         </LandingContainer>
-        <SpecialText
-          specialText={this.project.specialText}
-          specialImg={this.project.specialImg}
-        />
+        { 
+          this.state.rendered ? ( 
+            <SpecialText
+              pageWrapper={this.pageContainer.current}
+              specialText={this.project.specialText}
+              specialImg={this.project.specialImg}
+            /> 
+          ): (
+            <></>
+          ) 
+        }
         <SpecialSSMotherContainer>
           <SpeacialSSContainer marginTop="0rem">
             <div>

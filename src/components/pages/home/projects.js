@@ -124,22 +124,23 @@ class ProjectClass extends Component {
   componentDidMount() {
     //console.log(this.projectPageLink.current);
     console.log(this.props.project);
-    this.projectPageLink.current.addEventListener("click", e => {
-      e.preventDefault();
-      this.props.showProjectPage(this.props.project, this.props.currentURL);
-    });
+    // this.projectPageLink.current.addEventListener("click", e => {
+    //   e.preventDefault();
+    //   this.props.showProjectPage(this.props.project, this.props.currentURL);
+    // });
   }
   render() {
     return (
       <Project>
         <Spacer />
         <ProjectName className="project-name">
-          <a
+          {/* <a
             ref={this.projectPageLink}
             href={`/${this.props.currentURL}/${this.props.project.url}`}
-          >
+          > */}
+          <Link to={`/projects/${this.props.project.url}`}>
             {this.props.project.nameHTML}
-          </a>
+          </Link>
         </ProjectName>
         <Spacer />
         <ProjectThumbnail>
@@ -160,17 +161,18 @@ class ProjectClass extends Component {
 const ProjectPageWrapper = styled.div`
   transform: translateX(-100vw);
   position: absolute;
+  top: 0;
   height: 100vh;
   width: 100vw;
-  perspective: ${stylevars.home.perspective};
-  overflow: scroll;
-  overflow-x: hidden;
+  //perspective: ${stylevars.home.perspective};
+  //overflow: scroll;
+  //overflow-x: hidden;
   background: white;
   z-index: 20;
   transition: 1s;
   transition-timing-function: ease-in-out;
   &.projectPageOnView {
-    transform: translateX(0vw);
+    transform: translate(0vw, 0vw);
   }
 `;
 
@@ -184,17 +186,17 @@ class ProjectPageRenderer extends Component {
       console.log("wrapper");
       console.log(this.pageWrapper.current);
       this.pageWrapper.current.classList.add("projectPageOnView");
+      //this.pageWrapper.current.focus();
     } else if (!this.props.showingProjectPage) {
       this.pageWrapper.current.classList.remove("projectPageOnView");
     }
-    //this.pageWrapper.current.classList.add("projectPageOnView");
   }
   render() {
     // if (this.props.project && this.props.showingProjectPage) {
     return (
       <ProjectPageWrapper ref={this.pageWrapper}>
         {this.props.project ? (
-          <ProjectPage match={this.props.project.url} />
+          <ProjectPage match={this.props.project.url} from="homepage" />
         ) : (
           <></>
         )}
@@ -256,12 +258,13 @@ class ProjectsClass extends Component {
   }
   render() {
     return (
+      <>
+      <ProjectPageRenderer
+        currentURL={this.props.match.path}
+        project={this.state.currentProject}
+        showingProjectPage={this.state.showingProjectPage}
+      />
       <PreviousProjects>
-        <ProjectPageRenderer
-          currentURL={this.props.match.path}
-          project={this.state.currentProject}
-          showingProjectPage={this.state.showingProjectPage}
-        />
         <Headline>
           {this.props.fromHomePage ? (
             <h1>Previous projects</h1>
@@ -289,6 +292,7 @@ class ProjectsClass extends Component {
           </ShowMore>
         </Projects>
       </PreviousProjects>
+      </>
     );
   }
 }

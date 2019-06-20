@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const servicesFontSize = 1.4;
 
@@ -167,10 +168,9 @@ class Services extends Component{
                 </SkillsContainer>
                 <TechContainer className="tech-container">
                     <TechContainerTitle>tech and others</TechContainerTitle>
-                    <Text><p>S Cubed technologies is a tech innovation company that specializes in service automation and intelligent systems. Our team works diligently to deliver the best possible tech solutions. our mission is to create simple solutions to complex tasks of life with the help of automation.
-</p></Text>
+                    <Text><p>S Cubed technologies is a tech innovation company that specializes in service automation and intelligent systems. Our team works diligently to deliver the best possible tech solutions. our mission is to create simple solutions to complex tasks of life with the help of automation.</p></Text>
                     <a href="#">
-                        <More><span>more</span></More>
+                        <More><Link to="/Tech"><span>more</span></Link></More>
                     </a>
                 </TechContainer>
             </ServicesContainer>

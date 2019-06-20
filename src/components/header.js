@@ -90,8 +90,8 @@ class header extends Component {
             </Link>
           </NavLink>
           <NavLink>
-            <Link to="/Studio">
-              <span>Studio</span>
+            <Link to="/Tech">
+              <span>Tech</span>
             </Link>
           </NavLink>
           <NavLink>

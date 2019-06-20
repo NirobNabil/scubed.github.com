@@ -33,6 +33,15 @@ let slideOut = keyframes`
   }
 `;
 
+let fadeToBlack = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`
+
 let GlobalStyles = createGlobalStyle`
   body{
     margin    : 0;
@@ -70,6 +79,18 @@ let GlobalStyles = createGlobalStyle`
     position: absolute;
     z-index: -100 !important;
     animation: ${slideOut} 1.6s forwards ease-in-out;
+    &:after{
+      animation: ${fadeToBlack} 1.6s forwards ease-out;
+      content: '';
+      width: 100vw;
+      height: 100vh;
+      left: 0;
+      top: 0;
+      z-index: 50;
+      position: absolute;
+      background: black;
+      opacity: 0;
+    }
   }
 
 `;
@@ -111,7 +132,7 @@ class App extends Component {
                             return <Home match={match} />;
                           }}
                         />
-                        <Route path="/studio" render={() => <Studio />} />
+                        <Route path="/Tech" render={() => <Studio />} />
                         <Route
                           exact
                           path="/Projects"
