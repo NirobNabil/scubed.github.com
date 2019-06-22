@@ -32,7 +32,7 @@ const Title = styled.span`
 class SkillPassion extends Component {
   render() {
     return (
-      <SkillsPassionContainer>
+      <SkillsPassionContainer className="skills">
         <div>
           <Title>Skills</Title>
           <li>Strategy</li>

@@ -13,6 +13,8 @@ const OriginContainer = styled.div`
   overflow: hidden;
 `;
 
+
+
 const Origin = styled.div`
   align-self: center;
   margin-left: 20%;
@@ -47,6 +49,7 @@ class OriginClass extends Component {
     return (
       <OriginContainer ref={this.originContainer}>
         {this.state.rendered? (
+          
           <Cursor
             from="origin"
             elem={this.originContainer.current}
@@ -58,7 +61,7 @@ class OriginClass extends Component {
         ) : (
           <></>
         )}
-        <Origin>
+        <Origin className="origin">
           <OriginTitle>Origin</OriginTitle>
           <p>
           The name "S Cubed" comes from the name of our founder, Sakib Sadman Shajib. He was called S³ in school by his friends, which became a nickname soon after. Whenever people needed tech support, they'd call for S³. One person's passion became his profession and many joined their passions to create this team.

@@ -44,6 +44,7 @@ let fadeToBlack = keyframes`
 
 let GlobalStyles = createGlobalStyle`
   body{
+    height    : auto !important;
     margin    : 0;
     padding   : 0;
     overflow-x: hidden;
@@ -79,18 +80,6 @@ let GlobalStyles = createGlobalStyle`
     position: absolute;
     z-index: -100 !important;
     animation: ${slideOut} 1.6s forwards ease-in-out;
-    &:after{
-      animation: ${fadeToBlack} 1.6s forwards ease-out;
-      content: '';
-      width: 100vw;
-      height: 100vh;
-      left: 0;
-      top: 0;
-      z-index: 50;
-      position: absolute;
-      background: black;
-      opacity: 0;
-    }
   }
 
 `;

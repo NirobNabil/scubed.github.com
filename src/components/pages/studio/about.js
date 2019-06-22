@@ -29,7 +29,7 @@ const AboutText = styled.div`
 class About extends Component {
   render() {
     return (
-      <AboutContainer>
+      <AboutContainer className="about" >
         <AboutImg>
           <img src={landing3} />
         </AboutImg>

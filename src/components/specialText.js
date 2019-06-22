@@ -13,9 +13,10 @@ const SpecialTextContainer = styled.div`
 const SpecialImg = styled.div`
   position: relative;
   left: ${props => (props.left || 45) + "vw"};
-  transition: 0.5s;
-  transition-delay: 0.3s;
-  transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49);
+  transition: 1s;
+  transition-delay: .05s;
+  //transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49);
+  transition-timing-function: cubic-bezier(.82,.01,.5,.82);
   img {
     top: 50%;
     z-index: 5;
@@ -24,8 +25,8 @@ const SpecialImg = styled.div`
     position: absolute;
   }
   &.onView{
-    transition-delay: 0.3s;
-    transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49);
+    //transition-delay: 0.6s;
+    //transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49);
     left: 5vw;
   }
 `;
@@ -39,17 +40,15 @@ const SpecialText = styled.div`
   font-family: rzregular;
   font-size: 9rem;
   left: ${props => (props.left || 50) + "vw"};
-  transition: 0.5s;
-  transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49);
+  transition: 0.9s;
+  transition-timing-function: cubic-bezier(.93,.07,.45,.81);
   p{
-    transition: 0.5s;
-    transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49);
     opacity: ${props => props.opacity || 0.3};
   }
   &.onView{
     left: 30vw;
-    p{
-      opacity: 1;
+    &p{
+      opacity: 1 !important;
     }
   }
 `;

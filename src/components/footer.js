@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import footerBackImg from "../assets/footer5.jpg"
-import facebook from "../assets/icons/facebook.png"
-import twitter from "../assets/icons/twitter.png"
-import github from "../assets/icons/github.png"
-import linkedin from "../assets/icons/linkedin.png"
-
-import stylevars from '../stylevars'
+import footerBackImg from "../assets/footer5.jpg";
+import facebook from "../assets/icons/facebook.png";
+import twitter from "../assets/icons/twitter.png";
+import github from "../assets/icons/github.png";
+import linkedin from "../assets/icons/linkedin.png";
+import stylevars from '../stylevars';
+import ScrollReveal from "scrollreveal"
 
 
 const Footer = styled.footer`
@@ -16,7 +16,7 @@ const Footer = styled.footer`
 	display: grid;
 	grid-template-columns: repeat(20, calc(100%/20));
 	grid-template-rows: repeat(10, calc(100%/10));
-`
+`;
 
 const FooterBack = styled.div`
     grid-column: 6 / 21;
@@ -26,7 +26,7 @@ const FooterBack = styled.div`
         width: 100%;
         height: 100%;
     }
-`
+`;
 
 const MainFooter = styled.div`
     display: grid;
@@ -39,14 +39,14 @@ const MainFooter = styled.div`
     grid-column: 1 / 18;
     background: black;
     align-self: flex-end;
-`
+`;
 
 const ContactInfoContainer = styled.div`
     grid-column: 1 / 3;
     padding: 5%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-`
+`;
 
 const Info = styled.div`
     line-height: 1.5em;
@@ -57,21 +57,21 @@ const Info = styled.div`
     h3{
         padding: .5em 0em;
     }
-`
+`;
 
 const AboutUs = styled.div`
 			padding: 3em;
-`
+`;
 
 const Headline = styled.div`
     font-family: codelight;
     font-size: 3em;
-`
+`;
 const Description = styled.div`
     font-family: quicksandlight;
     width: 14em;
     font-size: 1.1em;
-`
+`;
 
 
 const SocialLinks = styled.div`
@@ -90,20 +90,12 @@ const SocialLinks = styled.div`
         width: 60%;
         filter: invert(100%);
     }
-`
+`;
 
 class FooterClass extends Component{
-    componentDidUpdate(){
-        if(this.props.sr){
-            // this.props.sr.reveal('.contact-info-container > *, .about-us > *')
-        }
-    }
-    componentWillUnmount(){
-        // this.props.sr.clean();
-    }
     render(){
         return (
-            <Footer>
+            <Footer className="footer">
                 <FooterBack><img src={footerBackImg}></img></FooterBack>
                 <MainFooter>
                     <ContactInfoContainer className="contact-info-container">

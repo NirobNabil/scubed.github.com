@@ -8,6 +8,7 @@ import About from "./studio/about";
 import Origin from "./studio/origin";
 import Skills from "./studio/skills";
 import Team from "./studio/team";
+import ScrollReveal from "scrollreveal"
 
 const StudioContainer = styled.div`
   height: 100vh;
@@ -35,7 +36,7 @@ class PostSpecialTextClass extends Component {
   render() {
     return (
       <div>
-        <PostSpecialText>
+        <PostSpecialText className="postSpecial">
         S Cubed has started working since April of 2015. 
         And has successfully provided service to corporate offices, 
         educational institutions and non profit organizations. Our 
@@ -62,10 +63,43 @@ class Studio extends Component {
     this.setState({
       rendered: true
     });
+    const defaults = {
+      delay: 300,
+      duration: 500,
+      distance: "60px",
+      easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+      opacity: 0,
+      container: document.querySelector(".studioContainer"),
+      origin: "bottom",
+      reset: false
+    };
+    const sreveal = ScrollReveal(defaults);
+    sreveal.debug = true;
+    this.sr = sreveal;
+    window.sr = sreveal
+
+    //calling reveals for elements
+    this.sr.reveal(".landing > *", { delay: 500, interval: 300});
+    this.sr.reveal(".about img", { delay: 900 });
+    this.sr.reveal(".about p", { delay: 500 });
+
+    this.sr.reveal(".skills > div:nth-child(1) > *", { interval: 200 })
+    this.sr.reveal(".skills > div:nth-child(2) > *", { interval: 400 })
+
+    this.sr.reveal(".postSpecial", { delay: 400 })
+
+    this.sr.reveal(".team > * > *", { delay: 100, interval: 200 })
+
+    this.sr.reveal(".contact-info-container > *, .about-us > *"); //footer
+  }
+  componentDidUpdate(){
+    if(this.state.rendered){
+      this.sr.reveal(".origin > *", { delay: 500, interval: 200 })
+    } 
   }
   render() {
     return (
-      <StudioContainer ref={this.pageWrapper}>
+      <StudioContainer className="studioContainer" ref={this.pageWrapper}>
         <Landing />
         <About />
         <Skills />

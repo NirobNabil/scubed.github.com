@@ -39,7 +39,7 @@ const Headline = styled.div`
 class Landing extends Component {
   render() {
     return (
-      <LandingContainer>
+      <LandingContainer className="landing">
         <Logo>
           <h1>
             S<sup>3</sup>

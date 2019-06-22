@@ -72,7 +72,7 @@ const teamMembers = {
 class Team extends Component {
   render() {
     return (
-      <TeamContainer>
+      <TeamContainer className="team">
         <div class="title">Core team</div>
         <div class="team-members">
           {Object.keys(teamMembers).map(name => {

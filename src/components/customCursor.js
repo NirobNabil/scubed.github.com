@@ -1,5 +1,14 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import React, { Component } from "react";
+
+const breathing = keyframes`
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+`
 
 const Cursor = styled.div`
   opacity: 1 !important;

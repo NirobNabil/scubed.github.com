@@ -18,17 +18,6 @@ let HomeContainer = styled.div`
   overflow: scroll;
   overflow-x: hidden;
   background: white;
-  &:after{
-    content: '';
-    width: 100vw;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    z-index: 50;
-    position: absolute;
-    background: black;
-    opacity: 1;
-  }
 `;
 
 class Home extends Component {
@@ -43,6 +32,7 @@ class Home extends Component {
       delay: 100,
       duration: 600,
       distance: "120px",
+      easing: 'cubic-bezier(0.5, 0, 0, 1)',
       container: document.querySelector(".home-container"),
       origin: "bottom",
       reset: false
@@ -54,7 +44,7 @@ class Home extends Component {
 
     //calling reveals for elements
     this.sr.reveal(".app", { delay: 400 });
-    this.sr.reveal(".landing-text > *", { distance: "80px", delay: 400, interval: 100 });
+    this.sr.reveal(".landing-text > *", { distance: "80px", delay: 400, interval: 100, rotate: { z: -2 }, });
     this.sr.reveal(".contact-info-container > *, .about-us > *");
     this.sr.reveal(document.querySelectorAll(".tech-container *"), {
       interval: 40,
@@ -64,7 +54,7 @@ class Home extends Component {
       interval: 200
     });
     this.sr.reveal(".project-name,  .show-more", {
-      delay: 500,
+      delay: 300,
       distance: "300px"
     });
     //this.revealCalled = true
