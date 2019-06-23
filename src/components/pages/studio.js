@@ -8,7 +8,8 @@ import About from "./studio/about";
 import Origin from "./studio/origin";
 import Skills from "./studio/skills";
 import Team from "./studio/team";
-import ScrollReveal from "scrollreveal"
+import ScrollReveal from "scrollreveal";
+import Scrooth from "../../scrooth"
 
 const StudioContainer = styled.div`
   height: 100vh;
@@ -91,11 +92,22 @@ class Studio extends Component {
     this.sr.reveal(".team > * > *", { delay: 100, interval: 200 })
 
     this.sr.reveal(".contact-info-container > *, .about-us > *"); //footer
+
+    //smooth scroll
+    // const scroll = new Scrooth({
+    //   element: document.querySelector('.studioContainer'),
+    //   strength: 18,
+    //   acceleration: 2.5,
+    //   deceleration: .925,
+    // });
   }
   componentDidUpdate(){
     if(this.state.rendered){
       this.sr.reveal(".origin > *", { delay: 500, interval: 200 })
     } 
+  }
+  componentWillUnmount() {
+    this.sr.destroy();
   }
   render() {
     return (

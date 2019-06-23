@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Cursor from "./customCursor.js";
 import React, { Component } from "react";
 import landing3 from "../assets/landing3.jpg";
+import easyScroll from "easy-scroll"
+import snapTo from "./snapToPosition"
 
 const SpecialTextContainer = styled.div`
   margin-top: 8em;
@@ -42,14 +44,10 @@ const SpecialText = styled.div`
   left: ${props => (props.left || 50) + "vw"};
   transition: 0.9s;
   transition-timing-function: cubic-bezier(.93,.07,.45,.81);
-  p{
-    opacity: ${props => props.opacity || 0.3};
-  }
+  opacity: ${props => props.opacity || 0.3};
   &.onView{
     left: 30vw;
-    &p{
-      opacity: 1 !important;
-    }
+    opacity: 1;
   }
 `;
 
@@ -70,8 +68,15 @@ class SpecialTextClass extends Component {
   componentDidMount() {
     this.setState({ rendered: true });
     this.specialText.current.addEventListener('click', () => {
-      this.specialText.current.classList.toggle('onView');
-      this.specialImg.current.classList.toggle('onView');
+      let timeout = 0;
+      if(!this.specialText.current.classList.contains('onView')){
+        snapTo(this.specialTextContainer.current, 900)
+        timeout = 500 - 300;
+      }
+      setTimeout( () => {
+        this.specialText.current.classList.toggle('onView');
+        this.specialImg.current.classList.toggle('onView');
+      }, timeout)    
     })
   }
   render() {
@@ -93,7 +98,7 @@ class SpecialTextClass extends Component {
         <SpecialImg left={this.state.x} ref={this.specialImg}>
           <img src={this.props.specialImg} />
         </SpecialImg>
-        <SpecialText ref={this.specialText}>
+        <SpecialText className="specialtext" ref={this.specialText}>
           <p>{this.props.specialText}</p>
         </SpecialText>
       </SpecialTextContainer>

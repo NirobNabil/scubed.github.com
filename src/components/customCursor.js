@@ -25,9 +25,6 @@ const Cursor = styled.div`
   transition: padding 0.2s;
   padding: ${props => (props.padding || 0) + "rem"};
   overflow: hidden;
-    ${"" /* .cursor-onview{
-      padding: 2.5rem;
-  } */};
 `;
 
 const Ham = styled.svg`
@@ -38,14 +35,14 @@ const Ham = styled.svg`
   top: 13%;
   z-index: 20;
   -webkit-tap-highlight-color: transparent;
-  transition: transform 400ms;
+  transition: transform 0.9s;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
   .line {
     fill:none;
-    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    transition: stroke-dasharray 900ms, stroke-dashoffset 900ms;
     stroke:#fff;
     stroke-width:2.7;
     stroke-linecap:round;
@@ -85,54 +82,53 @@ function addCustomCursor(
 ) {
   //assuming cursor is defined inside the markup of the main element
   //assuming there is a transform property defined for the cursor element
-  setTimeout(function() {
-    if (baseElem == null) {
-      baseElem = el;
-    }
-    console.log(baseElem);
-    let elPosY;
-    baseElem != el
-      ? (elPosY = baseElem.offsetTop + el.offsetTop)
-      : (elPosY = baseElem.offsetTop);
+  if (baseElem == null) {
+    baseElem = el;
+  }
+  console.log(baseElem);
+  let elPosY;
+  baseElem != el
+    ? (elPosY = baseElem.offsetTop + el.offsetTop)
+    : (elPosY = baseElem.offsetTop);
 
-    let previousDIff = elPosY - pageWrapper.scrollTop;
-    function setCursorPositionAfterScroll() {
-      let transforms = cursor.style.transform.split(",");
-      let currentY = parseInt(transforms[1]);
-      let deltaDiff = previousDIff - (elPosY - pageWrapper.scrollTop);
-      previousDIff = elPosY - pageWrapper.scrollTop;
-      transforms[1] = currentY + deltaDiff + "px)";
-      cursor.style.transform = transforms[0] + "," + transforms[1];
-    }
+  let previousDIff = elPosY - pageWrapper.scrollTop;
+  function setCursorPositionAfterScroll() {
+    let transforms = cursor.style.transform.split(",");
+    let currentY = parseInt(transforms[1]);
+    let deltaDiff = previousDIff - (elPosY - pageWrapper.scrollTop);
+    previousDIff = elPosY - pageWrapper.scrollTop;
+    transforms[1] = currentY + deltaDiff + "px)";
+    cursor.style.transform = transforms[0] + "," + transforms[1];
+  }
 
-    if(!actualElem){ actualElem = el };
-    actualElem.addEventListener("mouseenter", function() {
+  if(!actualElem){ actualElem = el };
+  actualElem.addEventListener("mouseenter", function() {
+    setCursorPositionAfterScroll();
+    cursor.childNodes[0].classList.remove('active');  //removing active triggers the entering animation
+    cursor.style.padding = paddingOnView;
+  });
+  actualElem.addEventListener("mouseleave", function() {
+    cursor.childNodes[0].classList.add('active');
+    cursor.style.padding = "0rem";
+    console.log("fired")
+  });
+  actualElem.addEventListener("mousemove", function(e) {
+    cursor.style.transform =
+      "translate(" +
+      (e.clientX - el.getBoundingClientRect().x) +
+      "px," +
+      (e.clientY - el.getBoundingClientRect().y) +
+      "px)";
+  });
+  console.log("elposy " + elPosY);
+  pageWrapper.addEventListener("scroll", function(e) {
+    if (
+      pageWrapper.scrollTop >= elPosY - el.clientHeight &&
+      pageWrapper.scrollTop <= elPosY + el.clientHeight
+    ) {
       setCursorPositionAfterScroll();
-      cursor.childNodes[0].classList.remove('active');  //removing active triggers the enteringa animation
-      cursor.style.padding = paddingOnView;
-    });
-    actualElem.addEventListener("mouseleave", function() {
-      cursor.childNodes[0].classList.add('active');
-      cursor.style.padding = "0rem";
-    });
-    actualElem.addEventListener("mousemove", function(e) {
-      cursor.style.transform =
-        "translate(" +
-        (e.clientX - el.getBoundingClientRect().x) +
-        "px," +
-        (e.clientY - el.getBoundingClientRect().y) +
-        "px)";
-    });
-    console.log("elposy " + elPosY);
-    pageWrapper.addEventListener("scroll", function(e) {
-      if (
-        pageWrapper.scrollTop >= elPosY - el.clientHeight &&
-        pageWrapper.scrollTop <= elPosY + el.clientHeight
-      ) {
-        setCursorPositionAfterScroll();
-      }
-    });
-  }, 100);
+    }
+  });
 }
 
 

@@ -11,6 +11,7 @@ import landing2 from "../../assets/landing1.jpg";
 import landing3 from "../../assets/dummy.jpg";
 import { projects } from "../../data.js";
 import ScrollReveal from "scrollreveal";
+import Scrooth from "../../scrooth";
 
 let HomeContainer = styled.div`
   height: 100vh;
@@ -32,7 +33,7 @@ class Home extends Component {
       delay: 100,
       duration: 600,
       distance: "120px",
-      easing: 'cubic-bezier(0.5, 0, 0, 1)',
+      easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
       container: document.querySelector(".home-container"),
       origin: "bottom",
       reset: false
@@ -43,7 +44,7 @@ class Home extends Component {
     //window.sr = sreveal
 
     //calling reveals for elements
-    this.sr.reveal(".app", { delay: 400 });
+    //this.sr.reveal(".app", { delay: 400 });
     this.sr.reveal(".landing-text > *", { distance: "80px", delay: 400, interval: 100, rotate: { z: -2 }, });
     this.sr.reveal(".contact-info-container > *, .about-us > *");
     this.sr.reveal(document.querySelectorAll(".tech-container *"), {
@@ -57,15 +58,18 @@ class Home extends Component {
       delay: 300,
       distance: "300px"
     });
-    //this.revealCalled = true
-    console.log("updated home");
-    console.log(this.sr.store);
-    //this.forceUpdate()
+
+
+    //smooth scrolling
+    // const scroll = new Scrooth({
+    //   element: document.querySelector('.home-container'),
+    //   strength: 18,
+    //   acceleration: 2.5,
+    //   deceleration: .925,
+    // });
   }
   componentWillUnmount() {
     this.sr.destroy();
-    console.log("cleaned home");
-    console.log(this.sr.store);
   }
   render() {
     return (

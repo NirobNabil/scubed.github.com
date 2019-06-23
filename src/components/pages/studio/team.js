@@ -23,7 +23,7 @@ const TeamContainer = styled.div`
 `;
 const TeamMember = styled.div`
   font-size: 1rem;
-  min-width: 20rem;
+  width: 25rem;
   padding-bottom: 3rem;
   font-family: quicksandmedium;
   .name {
