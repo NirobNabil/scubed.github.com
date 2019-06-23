@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { createGlobalStyle, keyframes } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 import ScrollReveal from "scrollreveal";
 import GlobalFonts from "./fonts.js";
 import Header from "./components/header";
@@ -14,6 +14,7 @@ import landing2 from "./assets/landing1.jpg";
 import landing3 from "./assets/dummy.jpg";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import transparentImg from "./assets/transparent.png"
 
 let slideIn = keyframes`
   from {
@@ -57,26 +58,31 @@ let GlobalStyles = createGlobalStyle`
 
   //custom scrollbar
   ::-webkit-scrollbar{
-    display: none;
-    width: .5vw;
-    background: transparent;
-  }
-  ::-webkit-scrollbar-track{
-    background: rgba(0,0,0,.1)
+    position: absolute;
+    //display: none;
+    width: .3vw;
+    //background: transparent;
   }
   ::-webkit-scrollbar-thumb{
     border-radius: 1vw;
-    background: rgba(0,0,0,.4);
+    background: rgba(0,0,0,.3);
   }
 
-  &.page-enter{
-    position: absolute;
-    z-index: 1 !important;
-    animation-delay: 0s;
-    animation: ${slideIn} 1s forwards cubic-bezier(.77,0,.36,1);
+
+  .App{
+    position: relative;
   }
-  &.page-exit{
-    position: absolute;
+  .page-enter{
+    top: 0vh;
+    //transform: translateY(100vh);
+    position: fixed;
+    z-index: 100 !important;
+    animation-delay: 0s;
+    animation: ${slideIn} 1.0s forwards cubic-bezier(.77,0,.36,1);
+  }
+  .page-exit{
+    top: 0;
+    position: fixed;
     z-index: -100 !important;
     animation: ${slideOut} 1.6s forwards ease-in-out;
     &:after{
@@ -86,7 +92,7 @@ let GlobalStyles = createGlobalStyle`
       height: 100vh;
       left: 0;
       top: 0;
-      z-index: 50;
+      z-index: -50;
       position: absolute;
       background: black;
       opacity: 0;
@@ -94,6 +100,12 @@ let GlobalStyles = createGlobalStyle`
   }
 
 `;
+
+const Wrapper = styled.div`
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+`
 
 class App extends Component {
   constructor() {
@@ -120,7 +132,7 @@ class App extends Component {
                 <>
                   <TransitionGroup component={null}>
                     <CSSTransition
-                      timeout={1500}
+                      timeout={2000}
                       classNames="page"
                       key={location.key}
                     >
@@ -129,7 +141,7 @@ class App extends Component {
                           exact
                           path="/"
                           render={({ match }) => {
-                            return <Home match={match} />;
+                            return <Wrapper><Home match={match} /></Wrapper>;
                           }}
                         />
                         <Route path="/Tech" render={() => <Studio />} />

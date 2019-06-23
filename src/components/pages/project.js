@@ -6,7 +6,8 @@ import projectSS from "../../assets/projectsSS.jpg";
 import SpecialText from "../specialText.js";
 import Footer from "../footer";
 import stylevars from "../../stylevars";
-import ScrollReveal from "scrollreveal"
+import ScrollReveal from "scrollreveal";
+import Scrooth from "../../scrooth"
 
 const ProjectPageContainer = styled.div`
   height: 100vh;
@@ -160,6 +161,13 @@ class Project extends Component {
 
     //calling reveals for elements
     this.sr.reveal(".project-title", { delay: (this.props.from == "homepage") ? 900 : 1000 });
+
+    const scroll = new Scrooth({
+      element: this.pageContainer,
+      strength: 18,
+      acceleration: 2.5,
+      deceleration: .9,
+    });
   }
   render() {
     return (

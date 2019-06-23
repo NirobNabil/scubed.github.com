@@ -94,12 +94,12 @@ class Studio extends Component {
     this.sr.reveal(".contact-info-container > *, .about-us > *"); //footer
 
     //smooth scroll
-    // const scroll = new Scrooth({
-    //   element: document.querySelector('.studioContainer'),
-    //   strength: 18,
-    //   acceleration: 2.5,
-    //   deceleration: .925,
-    // });
+    const scroll = new Scrooth({
+      element: document.querySelector('.studioContainer'),
+      strength: 18,
+      acceleration: 2.5,
+      deceleration: .9,
+    });
   }
   componentDidUpdate(){
     if(this.state.rendered){

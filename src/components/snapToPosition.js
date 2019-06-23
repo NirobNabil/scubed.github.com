@@ -12,13 +12,12 @@ function findMyMom(elem, granny=document.querySelector(".App")){
 export default (elem, duration=1000) => {
     let mom = findMyMom(elem);
     let elemPos = elem.offsetTop;
-
+    
     easyScroll({
         'scrollableDomEle': mom,
         'direction': 'bottom',
         'duration': duration,
         'easingPreset': 'easeOutCubic',
-        //'cubicBezierPoints': {'x1': .93, 'y1': .07, 'x2': .45, 'y2': .81},
         'scrollAmount': elemPos - mom.scrollTop,
     });
 }

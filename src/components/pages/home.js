@@ -14,6 +14,7 @@ import ScrollReveal from "scrollreveal";
 import Scrooth from "../../scrooth";
 
 let HomeContainer = styled.div`
+  //border: .3em solid black;
   height: 100vh;
   perspective: ${stylevars.home.perspective};
   overflow: scroll;
@@ -61,12 +62,12 @@ class Home extends Component {
 
 
     //smooth scrolling
-    // const scroll = new Scrooth({
-    //   element: document.querySelector('.home-container'),
-    //   strength: 18,
-    //   acceleration: 2.5,
-    //   deceleration: .925,
-    // });
+    const scroll = new Scrooth({
+      element: document.querySelector('.home-container'),
+      strength: 18,
+      acceleration: 2.5,
+      deceleration: .9,
+    });
   }
   componentWillUnmount() {
     this.sr.destroy();
