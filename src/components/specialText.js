@@ -45,6 +45,9 @@ const SpecialText = styled.div`
   transition: 0.9s;
   transition-timing-function: cubic-bezier(.93,.07,.45,.81);
   opacity: ${props => props.opacity || 0.3};
+  p{
+    margin: 0;
+  }
   &.onView{
     left: 30vw;
     opacity: 1;

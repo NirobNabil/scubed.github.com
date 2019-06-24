@@ -34,6 +34,7 @@ const Headline = styled.div`
   line-height: 0.95em;
   font-size: 9vw;
   font-family: rzregular;
+  //font-family: ralewaymedium;
 `;
 
 class Landing extends Component {
@@ -46,7 +47,7 @@ class Landing extends Component {
           </h1>
         </Logo>
         <Headline>
-          Studio <br /> & vision
+          our <br /> vision
         </Headline>
       </LandingContainer>
     );

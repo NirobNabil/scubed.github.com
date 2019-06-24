@@ -87,9 +87,9 @@ class Studio extends Component {
     this.sr.reveal(".skills > div:nth-child(1) > *", { interval: 200 })
     this.sr.reveal(".skills > div:nth-child(2) > *", { interval: 400 })
 
-    this.sr.reveal(".postSpecial", { delay: 400 })
+    this.sr.reveal(".postSpecial", { delay: 700 })
 
-    this.sr.reveal(".team > * > *", { delay: 100, interval: 200 })
+    this.sr.reveal(".team > * > *", { delay: 300, interval: 200 })
 
     this.sr.reveal(".contact-info-container > *, .about-us > *"); //footer
 

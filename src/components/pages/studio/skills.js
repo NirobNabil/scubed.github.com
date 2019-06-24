@@ -6,16 +6,22 @@ const SkillsPassionContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   div {
-    padding: 0em 3rem;
-    font-family: quicksandmedium;
-    width: 18rem;
+    padding: 0em 6rem;
+    font-family: rzregular;
+    font-weight: 50;
+    width: 20rem;
     li {
-      line-height: 1.2em;
-      font-size: 1.9em;
+      line-height: 1.3em;
+      font-size: 1.95em;
+      word-spacing: 3px;
       list-style-type: none;
+      &:nth-child(1){
+        margin-top: 4rem;
+      }
     }
     p {
-      font-family: quicksandmedium;
+      width: 17rem;
+      font-family: quicksandregular;
       line-height: 1.4em;
       font-size: 1.1em;
       margin: 0;
@@ -23,9 +29,11 @@ const SkillsPassionContainer = styled.div`
   }
 `;
 
-const Title = styled.span`
+const Title = styled.h6`
+  margin: 0;
+  padding-bottom: 1.2rem;
   font-size: 0.9rem;
-  padding-bottom: 0.4rem;
+  font-weight: 400;
   font-family: monospace;
 `;
 
@@ -35,14 +43,16 @@ class SkillPassion extends Component {
       <SkillsPassionContainer className="skills">
         <div>
           <Title>Skills</Title>
-          <li>Strategy</li>
-          <li>Brand Identities</li>
-          <li>Print Design</li>
-          <li>UI/UX Design</li>
-          <li>Art Direction</li>
-          <li>Back End</li>
-          <li>Admin System</li>
-          <li>Front End</li>
+          <li>Content Dev</li>
+          <li>Web Development</li>
+          <li>Logo Design</li>
+
+          <li>Digital Marketing</li>
+          <li>Technical Support</li>
+          <li>Digital Art Design</li>
+          <li>Technical Consultant</li>
+          <li>SEO</li>
+          
         </div>
         <div>
           <Title>Passion</Title>

@@ -21,7 +21,7 @@
  import dosismedium from "./assets/fonts/dosis_family/Dosis-Medium.otf"; 
  import dosisregular from "./assets/fonts/dosis_family/Dosis-Regular.otf"; 
  import dosissemibold from "./assets/fonts/dosis_family/Dosis-SemiBold.otf"; 
- import maisonneuemono from "./assets/fonts/maison-neue-mono.ttf"; 
+ import maisonneuemono from "./assets/fonts/maison-neue-mono.ttf";      //this is one of the rezo zero fonts
  import neotericbold from "./assets/fonts/NEOTERIC_bold.ttf"; 
  import neotericregular from "./assets/fonts/NEOTERIC_regular.ttf"; 
  import quicksandbold from "./assets/fonts/Quicksand/Quicksand-Bold.ttf"; 

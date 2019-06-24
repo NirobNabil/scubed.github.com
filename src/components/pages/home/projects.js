@@ -45,8 +45,10 @@ const Spacer = styled.div`
 const ProjectName = styled.h3`
   position: relative;
   box-sizing: border-box;
-  font-family: ralewaythin;
-  font-size: 2em;
+  //font-family: ralewaythin;
+  font-family: rzregular;
+  font-size: 2.1em;
+  font-weight: 100;
   padding: 1vw 3vw;
   align-self: center;
 `;

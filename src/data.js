@@ -6,11 +6,12 @@ import project1 from "./assets/project2.jpg";
 import stylevars from "./stylevars";
 import projectSpecialSS from "./assets/projectspecailss.JPG";
 
+ 
 const projects = {
   "Electronics Based Startup1": {
     url: "GEIST_International_Foundation",
     name: "GEIST International Foundation (GIF)",
-    nameHTML: ["GEIST International Foundation", <br />, "(GIF)"], //this name represents a jsx object
+    nameHTML: ["Théâtre de la Ville", <br />, "de Paris"], //this name represents a jsx object
     img: project1,
     specialText:
       "The menu highlights different types of shows to allow a direct access to dedicated content.",

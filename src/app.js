@@ -8,6 +8,7 @@ import Studio from "./components/pages/studio.js";
 import Projects from "./components/pages/projects.js";
 import ProjectPage from "./components/pages/project.js";
 import Contact from "./components/pages/Contact.js";
+import Skill from "./components/pages/skill.js"
 import Footer from "./components/footer";
 import landing1 from "./assets/landing2.png";
 import landing2 from "./assets/landing1.jpg";
@@ -172,6 +173,12 @@ class App extends Component {
                           path={`/Contact`}
                           render={({ match }) => {
                             return <Contact />;
+                          }}
+                        />
+                        <Route
+                          path={'/Skill/:name'}
+                          render={({ match }) => {
+                            return <Skill match={match.params.name} />;
                           }}
                         />
                       </Switch>
