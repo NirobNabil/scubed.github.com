@@ -6,8 +6,8 @@ import Footer from "../footer";
 
 const PageContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, calc(100% / 3));
-  grid-template-rows: 35vh 20vh 1fr;
+  grid-template-columns: repeat(20, 5vw);
+  grid-template-rows: repeat(20, 5vh);
   width: 100vw;
   height: 100vh;
   overflow: scroll;
@@ -15,97 +15,56 @@ const PageContainer = styled.div`
   background: white;
 `;
 
-const LogoContainer = styled.div`
-  grid-column: 1/2;
-  grid-row: 2/3;
-  img {
-    position: relative;
-    margin-left: 7em;
-    max-width: 10vw;
-  }
-`;
 
-const ContactContainer = styled.div`
-  grid-column: 2/3;
-  grid-row: 2/3;
+const SkillContainer = styled.div`
+  grid-column: 8/18;
+  grid-row: 8/20;
   padding-left: 4rem;
   //border: 1px solid black;
   position: relative;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  max-width: 30rem;
+	z-index: 10;
+  //max-width: 30rem;
 `;
 
-const ContactHeadline = styled.h1`
+const SkillHeadline = styled.h1`
   color: #111111;
   letter-spacing: 4px;
   font-size: 9em;
   font-family: ralewaylight;
 `;
 
-const ContactSubtitle = styled.div`
-  width: 80%;
+const SkillSubtitle = styled.div`
+  width: 90%;
   margin-top: 0.5em;
   line-height: 1.3em;
-  font-size: 2em;
+  font-size: 1.4em;
   font-family: ralewayregular;
-`;
-
-const ContactInfoContainer = styled.div`
-  margin-top: 1em;
-  font-family: ralewayregular;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-`;
-
-const Info = styled.div`
-  line-height: 1.5em;
-  padding: 1em 0em;
-  &:nth-child(odd) {
-    grid-column: 1 / 2;
-  }
-  h3 {
-    font-size: ralewaythin;
-    font-size: 0.7em;
-    padding: 0.5em 0em;
-  }
+	//background: rgba(255,255,255, .49);
+	//box-shadow: 0px 0px 90px 5px white;
 `;
 
 const ExtraImgContainer = styled.div`
-  grid-column: 3;
-  grid-row: 3;
+  grid-column: 4/10;
+  grid-row: 3/7;
+	z-index: 1;
   img {
     max-width: 100%;
   }
 `;
 
-class Contact extends Component {
+class Skill extends Component {
   render() {
     return (
       <PageContainer>
-        <LogoContainer>
-          <img src={logo} />
-        </LogoContainer>
-        <ContactContainer>
-          <ContactHeadline>Contact</ContactHeadline>
-          <ContactSubtitle>
-            For any enquiries, or just to say hello, get in touch and contact
-            us.
-          </ContactSubtitle>
-          <ContactInfoContainer>
-            <Info>
-              <h3>E-mail</h3> <span>loremupsum@scubed.org</span>
-            </Info>
-            <Info>
-              <h3>Call us</h3> <span>+8801848333385</span>
-            </Info>
-            <Info>
-              <h3>Address</h3>{" "}
-              <span>3/7/1 johnson road, dhaka nagar siddiqui plaza, B/11</span>
-            </Info>
-          </ContactInfoContainer>
-        </ContactContainer>
+        <SkillContainer>
+          <SkillHeadline>{this.props.match}</SkillHeadline>
+          <SkillSubtitle>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+          </SkillSubtitle>
+        </SkillContainer>
         <ExtraImgContainer>
           <img src={extraimg} />
         </ExtraImgContainer>
@@ -114,4 +73,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default Skill;
