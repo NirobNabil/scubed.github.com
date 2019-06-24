@@ -30,6 +30,7 @@ const SkillContainer = styled.div`
 `;
 
 const SkillHeadline = styled.h1`
+  line-height: .9em;
   color: #111111;
   letter-spacing: 4px;
   font-size: 9em;
@@ -38,7 +39,7 @@ const SkillHeadline = styled.h1`
 
 const SkillSubtitle = styled.div`
   width: 90%;
-  margin-top: 0.5em;
+  margin-top: 2em;
   line-height: 1.3em;
   font-size: 1.4em;
   font-family: ralewayregular;

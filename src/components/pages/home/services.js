@@ -78,7 +78,7 @@ class SkillsList extends Component {
                 <SkillList>
                     {this.props.skillNames
                         .map(skillName => {
-                            return <li><span> {skillName} </span></li>
+                            return <Link to={`Skill/${skillName}`}><li><span> {skillName} </span></li></Link>
                         })
                     }
                 </SkillList>

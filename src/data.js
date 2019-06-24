@@ -3,6 +3,7 @@ import landing1 from "./assets/landing2.png";
 import landing2 from "./assets/landing1.jpg";
 import landing3 from "./assets/landing3.jpg";
 import project1 from "./assets/project2.jpg";
+import landingSS from "./assets/projectsSS.jpg"
 import stylevars from "./stylevars";
 import projectSpecialSS from "./assets/projectspecailss.JPG";
 
@@ -30,6 +31,7 @@ const projects = {
         "Digital Marketing"
       ],
     year: "2018",
+    landingSS: landingSS,
     specialImg: landing3,
     specialSS: projectSpecialSS
   },

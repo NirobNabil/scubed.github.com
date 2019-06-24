@@ -35,6 +35,7 @@ class Home extends Component {
       duration: 600,
       distance: "120px",
       easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+      //opacity: 0,
       container: document.querySelector(".home-container"),
       origin: "bottom",
       reset: false,
@@ -61,18 +62,19 @@ class Home extends Component {
   }
   componentDidUpdate(){
     if(this.props.SRdestroyed){
-      this.sr.reveal(document.querySelectorAll(".tech-container *"), {
-        interval: 40,
-        delay: 500
-      });
       this.sr.reveal(".skill", {
         interval: 200
+      });
+      this.sr.reveal(document.querySelectorAll(".tech-container *"), {
+        interval: 40,
+        //delay: 300
       });
   
       this.sr.reveal(".project-name,  .show-more", {
         duration: 1000,
         distance: '0px',
         delay: 300,
+        viewFactor: 0
       });
   
       this.sr.reveal(".contact-info-container > *, .about-us > *");
