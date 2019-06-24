@@ -17,7 +17,7 @@ const SkillsContainer = styled.div`
     grid-row   : 3 / 8;
     grid-column: 4;
     min-width  : 20em;
-    font-family: quicksandlight;
+    font-family: ralewayregular;
     li{
         list-style-type: none;
     }
@@ -28,6 +28,10 @@ const SkillsContainerTitle = styled.div`
     padding-bottom: ${servicesFontSize + .1 + 'em'};
 `
 const Skill = styled.div`
+    h2{
+        font-family: rzregular;
+        font-weight: 100;
+    }
     position                  : relative;
     font-size                 : ${servicesFontSize + .1 + 'em'};
     padding-bottom            : .1em;
@@ -45,6 +49,10 @@ const Skill = styled.div`
 const SkillList = styled.div`
     li{
         padding-left: 1.3em;
+        span{
+            font-family: rzregular;
+            font-weight: 100;
+        }
     }
     li:before{
         margin-top : .5em;
@@ -124,9 +132,9 @@ const More = styled.div`
 // }
 
 const skills = {
-    "AUTOMATION": ['Web Development', 'Software Development', 'Tech Support', 'Optimizations'],
-    "INNOVATION": ['S Cubed Creative Digital Lab'],
-    "INTEGRATION": ['PC Integration'],
+    "Technology": ['Web Development', 'Software Development', 'Technical Support', 'Technical Consultant'],
+    "Marketing": ['SEO', 'Social Media', 'Content Development', 'Digital Art'],
+    "Brand Identity": ['Logo Design', 'Business card design'],
 }
 
 

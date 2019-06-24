@@ -10,7 +10,7 @@ let Container = styled.div`
     width          : 100%;
     transition     : 1s;
     transform-style: preserve-3d;
-    &:after{
+    /* &:after{
       top: 0;
       left: 0;
       content: '';
@@ -21,7 +21,7 @@ let Container = styled.div`
       z-index: 10;
       opacity: 1;
       transition: 1s;
-    }
+    } */
     img{
         position        : relative;
         height          : ${props => props.height || "auto"};
@@ -34,11 +34,11 @@ let Container = styled.div`
                               parseInt(props.translateZ)) /
                             parseInt(props.perspective)});
     }
-    &.onView{
+    /* &.onView{
       &:after{
         opacity: 0;
       }
-    }
+    } */
 `;
 
 const viewport_width = Math.max(
@@ -85,19 +85,19 @@ class ParallaxImg extends Component {
     this.sr = sreveal;  
     console.log("doanimation");
     console.log(this.props.doAnimation)
-    if(this.props.doAnimation){
-      console.log("came in")
-      this.sr.reveal(this.parallax_img.current, {
-        delay: 1000,
-        duration: 1500,
-        distance: '90px',
-        easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
-        origin: 'top'
-      })
-      setTimeout( () => {
-        this.parallax_img_container.current.classList.add('onView')
-      }, 1000 )
-    }else { this.parallax_img_container.current.classList.add('onView') }
+    // if(this.props.doAnimation){
+    //   console.log("came in")
+    //   this.sr.reveal(this.parallax_img.current, {
+    //     delay: 1000,
+    //     duration: 1500,
+    //     distance: '90px',
+    //     easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+    //     origin: 'top'
+    //   })
+    //   setTimeout( () => {
+    //     this.parallax_img_container.current.classList.add('onView')
+    //   }, 1000 )
+    // }else { this.parallax_img_container.current.classList.add('onView') }
 
   }
   render() {

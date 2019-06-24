@@ -163,7 +163,7 @@ class Project extends Component {
     this.sr.reveal(".project-title", { delay: (this.props.from == "homepage") ? 900 : 1000 });
 
     const scroll = new Scrooth({
-      element: this.pageContainer,
+      element: this.pageContainer.current,
       strength: 18,
       acceleration: 2.5,
       deceleration: .9,

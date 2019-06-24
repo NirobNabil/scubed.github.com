@@ -72,26 +72,17 @@ class Studio extends Component {
       opacity: 0,
       container: document.querySelector(".studioContainer"),
       origin: "bottom",
-      reset: false
+      reset: false,
+      viewFactor: .5
     };
     const sreveal = ScrollReveal(defaults);
     sreveal.debug = true;
     this.sr = sreveal;
-    window.sr = sreveal
 
     //calling reveals for elements
-    this.sr.reveal(".landing > *", { delay: 500, interval: 300});
-    this.sr.reveal(".about img", { delay: 900 });
-    this.sr.reveal(".about p", { delay: 500 });
-
-    this.sr.reveal(".skills > div:nth-child(1) > *", { interval: 200 })
-    this.sr.reveal(".skills > div:nth-child(2) > *", { interval: 400 })
-
-    this.sr.reveal(".postSpecial", { delay: 700 })
-
-    this.sr.reveal(".team > * > *", { delay: 300, interval: 200 })
-
-    this.sr.reveal(".contact-info-container > *, .about-us > *"); //footer
+    this.sr.reveal(".landing > *", { delay: 500, interval: 300, viewFactor: 0});
+    this.sr.reveal(".about img", { delay: 900, viewFactor: 0 });
+    
 
     //smooth scroll
     const scroll = new Scrooth({
@@ -102,12 +93,26 @@ class Studio extends Component {
     });
   }
   componentDidUpdate(){
-    if(this.state.rendered){
+    if(this.state.rendered && this.props.SRdestroyed){
       this.sr.reveal(".origin > *", { delay: 500, interval: 200 })
+      this.sr.reveal(".about p", { delay: 500 });
+
+      this.sr.reveal(".skills > div:nth-child(1) > *", { interval: 200 })
+      this.sr.reveal(".skills > div:nth-child(2) > *", { interval: 400 })
+
+      this.sr.reveal(".postSpecial", { delay: 700 })
+
+      this.sr.reveal(".team > * > *", { delay: 300, interval: 200 })
+
+      this.sr.reveal(".contact-info-container > *, .about-us > *"); //footer
+
+      this.props.updateSRstatus(false);
     } 
   }
   componentWillUnmount() {
+    console.log("studio unmount");
     this.sr.destroy();
+    this.props.updateSRstatus(true);
   }
   render() {
     return (

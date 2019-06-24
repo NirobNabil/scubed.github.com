@@ -120,8 +120,13 @@ class App extends Component {
     super();
     this.supportsHistory = "pushState" in window.history;
     this.state = {
-      currentPath: null
+      currentPath: null,
+      SRdestroyed: true,
     };
+    this.updateSRstatus = (destroyed)=>{
+      this.setState({ SRdestroyed: destroyed })
+      console.log("sr changed to " + destroyed)
+    }
     this.onRouterChange = (prevState, nextState) => {
       console.log("prevstate");
       console.log(prevState);
@@ -149,23 +154,23 @@ class App extends Component {
                           exact
                           path="/"
                           render={({ match }) => {
-                            return <Wrapper><Home match={match} /></Wrapper>;
+                            return <Wrapper><Home updateSRstatus={this.updateSRstatus} SRdestroyed={this.state.SRdestroyed} match={match} /></Wrapper>;
                           }}
                         />
-                        <Route path="/Tech" render={() => <Studio />} />
+                        <Route path="/Tech" render={() => <Studio updateSRstatus={this.updateSRstatus} SRdestroyed={this.state.SRdestroyed} />} />
                         <Route
                           exact
                           path="/Projects"
                           render={({ match }) => {
                             console.log(match);
-                            return <Projects match={match} />;
+                            return <Projects updateSRstatus={this.updateSRstatus} SRdestroyed={this.state.SRdestroyed} match={match} />;
                           }}
                         />
                         <Route
                           exact
                           path={`/Projects/:name`}
                           render={({ match }) => {
-                            return <ProjectPage match={match.params.name} />;
+                            return <ProjectPage updateSRstatus={this.updateSRstatus} SRdestroyed={this.state.SRdestroyed} match={match.params.name} />;
                           }}
                         />
                         <Route

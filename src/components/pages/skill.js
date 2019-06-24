@@ -47,12 +47,24 @@ const SkillSubtitle = styled.div`
 `;
 
 const ExtraImgContainer = styled.div`
+	position: relative;
   grid-column: 4/10;
-  grid-row: 3/7;
+  grid-row: 3/15;
 	z-index: 1;
   img {
     max-width: 100%;
   }
+	/* &:after{
+		z-index: 5;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		//background: rgba(255,255,255,.5);
+		background: black;
+		width: 100%;
+		height: 100%;
+	} */
 `;
 
 class Skill extends Component {

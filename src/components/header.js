@@ -35,7 +35,7 @@ const HeaderContainer = styled.div`
 
 const Name = styled.div`
   margin-left: 4vw;
-  padding: 1.3em;
+  padding: 1em;
   font-family: codebold;
   font-size: 1.6em;
 `;
@@ -91,7 +91,7 @@ class header extends Component {
           </NavLink>
           <NavLink>
             <Link to="/Tech">
-              <span>Tech</span>
+              <span>Our vision</span>
             </Link>
           </NavLink>
           <NavLink>

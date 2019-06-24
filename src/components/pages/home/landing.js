@@ -17,7 +17,8 @@ let LandingContainer = styled.div`
 
 let LandingText = styled.div`
     margin-left   : 4vw;
-    font-family   : ralewayregular;
+    font-family   : rzregular;//ralewayregular;
+    line-height: 1.1em;
     font-size     : 7vw;
     grid-column   : span 5;
     grid-row      : 3;

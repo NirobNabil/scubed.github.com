@@ -4,7 +4,8 @@ import Projects from "./home/projects";
 import { projects } from "../../data";
 import Footer from "../footer";
 import stylevars from "../../stylevars";
-import Scrooth from "../../scrooth"
+import Scrooth from "../../scrooth";
+import ScrollReveal from 'scrollreveal';
 
 const PageWrapper = styled.div`
   height: 100vh;
@@ -18,6 +19,7 @@ const PageWrapper = styled.div`
 
 class ProjectsPage extends Component {
   componentDidMount(){
+
     const scroll = new Scrooth({
       element: document.querySelector('.projectsWrapper'),
       strength: 18,

@@ -37,7 +37,8 @@ class Home extends Component {
       easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
       container: document.querySelector(".home-container"),
       origin: "bottom",
-      reset: false
+      reset: false,
+      viewFactor: 1
     };
     const sreveal = ScrollReveal(defaults);
     sreveal.debug = true;
@@ -47,20 +48,7 @@ class Home extends Component {
     //calling reveals for elements
     //this.sr.reveal(".app", { delay: 400 });
     this.sr.reveal(".landing-text > *", { distance: "80px", delay: 400, interval: 200, rotate: { z: -2 }, });
-    
-    this.sr.reveal(document.querySelectorAll(".tech-container *"), {
-      interval: 40,
-      delay: 500
-    });
-    this.sr.reveal(".skill", {
-      interval: 200
-    });
 
-    this.sr.reveal(".project-name,  .show-more", {
-      delay: 300,
-    });
-
-    this.sr.reveal(".contact-info-container > *, .about-us > *");
 
 
     //smooth scrolling
@@ -71,8 +59,31 @@ class Home extends Component {
     //   deceleration: .9,
     // });
   }
+  componentDidUpdate(){
+    if(this.props.SRdestroyed){
+      this.sr.reveal(document.querySelectorAll(".tech-container *"), {
+        interval: 40,
+        delay: 500
+      });
+      this.sr.reveal(".skill", {
+        interval: 200
+      });
+  
+      this.sr.reveal(".project-name,  .show-more", {
+        duration: 1000,
+        distance: '0px',
+        delay: 300,
+      });
+  
+      this.sr.reveal(".contact-info-container > *, .about-us > *");
+
+      this.props.updateSRstatus(false);
+    }
+  }
   componentWillUnmount() {
+    console.log("home unmount");
     this.sr.destroy();
+    this.props.updateSRstatus(true);
   }
   render() {
     return (
