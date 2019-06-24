@@ -41,16 +41,31 @@ let ParallaxImageContainer = styled.div`
     position: absolute;
     width   : ${containerWidth};
     height  : 32vw;
+    /* opacity: 0; */
     overflow: hidden;
     left: ${props => props.left};
     top: ${props => props.top};
+    transition: .6s;
+    /* &.onView{
+      //height:32vw;
+      opacity: 1;
+    } */
 `;
 
 class ParallaxImgContainer extends Component{
+    // constructor(){
+    //     super();
+    //     this.parallax_img_container = React.createRef();
+    // }
+    // componentDidMount(){
+    //     setTimeout( () => {
+    //         this.parallax_img_container.current.classList.add('onView')
+    //     }, 2000 )
+    // }
     render(){
         return(
-            <ParallaxImageContainer left={this.props.left} top={this.props.top}>
-                <ParallaxImg perspective={stylevars.home.perspective} src= { this.props.src } translateZ="-5px"></ParallaxImg>
+            <ParallaxImageContainer ref={this.parallax_img_container} left={this.props.left} top={this.props.top}>
+                <ParallaxImg doAnimation="1" perspective={stylevars.home.perspective} src= { this.props.src } translateZ="-5px"></ParallaxImg>
             </ParallaxImageContainer>
         )
     }
@@ -80,7 +95,7 @@ class Landing extends Component{
                     <span>technology and </span>
                     <span>innovation. </span>
                 </LandingText>
-                <FixedAnimatingObjects>
+                <FixedAnimatingObjects className="parallaxImgs">
                     <ParallaxImgContainer left={100 - parseInt(containerWidth) + "vw"} top="20%" src= {landing1}></ParallaxImgContainer>
                     <ParallaxImgContainer left={60 - parseInt(containerWidth) + "vw"} top="65%" src= {landing2}></ParallaxImgContainer>
                     <ParallaxImgContainer left={0 + "vw"} top="50%" src= {landing3} ></ParallaxImgContainer>

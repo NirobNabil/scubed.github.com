@@ -61,12 +61,19 @@ let GlobalStyles = createGlobalStyle`
     position: absolute;
     //display: none;
     width: .3vw;
-    //background: transparent;
+    background: transparent;
   }
   ::-webkit-scrollbar-thumb{
     border-radius: 1vw;
     background: rgba(0,0,0,.3);
   }
+
+  ::-webkit-scrollbar-track {
+      &:start{
+        background-color: black;
+      }  
+  }
+
 
 
   .App{
@@ -92,7 +99,7 @@ let GlobalStyles = createGlobalStyle`
       height: 100vh;
       left: 0;
       top: 0;
-      z-index: -50;
+      z-index: 50;
       position: absolute;
       background: black;
       opacity: 0;
