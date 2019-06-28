@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
 import ParallaxImg from '../../parallaxImg.js';
-import landing1 from '../../../assets/landing2.png';
-import landing2 from '../../../assets/landing1.jpg';
-import landing3 from '../../../assets/dummy.jpg';
+import landing1 from '../../../assets/4. Sustainable.jpg';
+import landing2 from '../../../assets/3. Secure.jpg';
+import landing3 from '../../../assets/1. Top of website.jpg';
 import stylevars from '../../../stylevars'
 
 let LandingContainer = styled.div`
