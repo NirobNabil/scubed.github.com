@@ -1,0 +1,26 @@
+## update the social media links in footer
+## remove the show more button in projects page
+#### fix the issue with specialtext that triggers mouseout event when moving downward diagonally
+## add scrollreveal animation on the project name in project page
+#### add datas for skill page in data.js
+## add the logo in place of the SUCUBED text in header
+
+#### things to do in final deploy
+- remove unnecessary font files
+- remove comments
+- turn of debug mode
+- remove console logs
+- remove commented out lines in css
+
+#### things to fix in next update 
+- change react components to functions where component isn't necessary
+- *fix the errors*
+- *fix the warnings*
+
+#### things to do in dev build
+- add comments to the addcustomcursor first
+
+# slight design changes
+- add different translateZ to each pic in home landing
+- show the pagename when hovering over the logo
+- add some animation in the skill page?

@@ -48,7 +48,8 @@ class Home extends Component {
 
     //calling reveals for elements
     //this.sr.reveal(".app", { delay: 400 });
-    this.sr.reveal(".landing-text > *", { distance: "80px", delay: 400, interval: 200, rotate: { z: -2 }, });
+    this.sr.reveal(".landing-text > *", { distance: "80px", delay: 400, interval: 200, rotate: { z: -2 }, viewFactor: 0});
+    //this.sr.reveal(".landing-text > span:nth-child(6), .landing-text > span:nth-child(7)", { distance: "0px", delay: 600, interval: 0, rotate: { z: -2 }, });
 
 
 
@@ -67,7 +68,7 @@ class Home extends Component {
       });
       this.sr.reveal(document.querySelectorAll(".tech-container *"), {
         interval: 40,
-        //delay: 300
+        viewFactor: .5
       });
   
       this.sr.reveal(".project-name,  .show-more", {
