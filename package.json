@@ -22,8 +22,8 @@
     "postinstall": "react-scripts build"
   },
   "engines": {
-    "node": "~6.10.3",
-    "npm": "~5.6.0"
+    "node": "^12.5.0",
+    "npm": "^6.9.0"
   },
   "eslintConfig": {
     "extends": "react-app"
