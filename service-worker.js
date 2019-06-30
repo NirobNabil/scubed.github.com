@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/scubed.github.com/precache-manifest.06d843c5a3e0f8f7728d230f49b01e28.js"
+  "/scubed.github.com/precache-manifest.ced69a0ecce42635160b6a507e1b8ee6.js"
 );
 
 self.addEventListener('message', (event) => {
