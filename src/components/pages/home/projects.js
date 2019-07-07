@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Router, Route, Switch, BrowserRouter, Link } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import ParallaxImg from "../../parallaxImg.js";
 import ProjectPage from "../project.js";
 import stylevars from "../../../stylevars";
-import { projects } from "../../../data";
+
 
 const PreviousProjects = styled.div`
   display: grid;
@@ -124,7 +123,6 @@ class ProjectClass extends Component {
     this.projectPageLink = React.createRef();
   }
   componentDidMount() {
-    //console.log(this.projectPageLink.current);
     console.log(this.props.project);
     // this.projectPageLink.current.addEventListener("click", e => {
     //   e.preventDefault();

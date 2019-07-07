@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
-import ScrollReveal from "scrollreveal";
 import GlobalFonts from "./fonts.js";
 import Header from "./components/header";
 import Home from "./components/pages/home.js";
@@ -9,13 +8,11 @@ import Projects from "./components/pages/projects.js";
 import ProjectPage from "./components/pages/project.js";
 import Contact from "./components/pages/Contact.js";
 import Skill from "./components/pages/skill.js"
-import Footer from "./components/footer";
-import landing1 from "./assets/landing2.png";
-import landing2 from "./assets/landing1.jpg";
-import landing3 from "./assets/dummy.jpg";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import transparentImg from "./assets/transparent.png"
+
+
+
 
 let slideIn = keyframes`
   from {
@@ -72,7 +69,7 @@ let GlobalStyles = createGlobalStyle`
   ::-webkit-scrollbar-track {
       &:start{
         background-color: black;
-      }  
+      }
   }
 
 
@@ -115,7 +112,9 @@ const Wrapper = styled.div`
   overflow: hidden;
 `
 
+
 class App extends Component {
+  
   constructor() {
     super();
     this.supportsHistory = "pushState" in window.history;
@@ -134,15 +133,18 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <GlobalFonts />
+      
+      <div className="App">      
+      
+                 <GlobalFonts />
         <GlobalStyles />
         <BrowserRouter forceRefresh={!this.supportsHistory}>
           <Header />
+
           <Route
             render={({ location }) => {
               return (
-                <>
+
                   <TransitionGroup component={null}>
                     <CSSTransition
                       timeout={2000}
@@ -154,23 +156,41 @@ class App extends Component {
                           exact
                           path="/"
                           render={({ match }) => {
-                            return <Wrapper><Home updateSRstatus={this.updateSRstatus} SRdestroyed={this.state.SRdestroyed} match={match} /></Wrapper>;
+                            return <Wrapper>
+                              <Home 
+                              updateSRstatus={this.updateSRstatus} 
+                              SRdestroyed={this.state.SRdestroyed} 
+                              match={match} 
+                              />
+                              </Wrapper>;
                           }}
                         />
-                        <Route path="/Tech" render={() => <Studio updateSRstatus={this.updateSRstatus} SRdestroyed={this.state.SRdestroyed} />} />
+                        <Route 
+                        path="/Tech" 
+                        render={() => <Studio 
+                        updateSRstatus={this.updateSRstatus} 
+                        SRdestroyed={this.state.SRdestroyed} 
+                        />} 
+                        />
                         <Route
                           exact
                           path="/Projects"
                           render={({ match }) => {
-                            console.log(match);
-                            return <Projects updateSRstatus={this.updateSRstatus} SRdestroyed={this.state.SRdestroyed} match={match} />;
+                            //console.log(match);
+                            return <Projects 
+                            updateSRstatus={this.updateSRstatus} 
+                            SRdestroyed={this.state.SRdestroyed} 
+                            match={match} />;
                           }}
                         />
                         <Route
                           exact
                           path={`/Projects/:name`}
                           render={({ match }) => {
-                            return <ProjectPage updateSRstatus={this.updateSRstatus} SRdestroyed={this.state.SRdestroyed} match={match.params.name} />;
+                            return <ProjectPage 
+                            updateSRstatus={this.updateSRstatus} 
+                            SRdestroyed={this.state.SRdestroyed} 
+                            match={match.params.name} />;
                           }}
                         />
                         <Route
@@ -189,12 +209,18 @@ class App extends Component {
                       </Switch>
                     </CSSTransition>
                   </TransitionGroup>
-                </>
+
               );
             }}
           />
         </BrowserRouter>
+                  
+       
+         
       </div>
+
+      
+      
     );
   }
 }

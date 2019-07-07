@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-import landing3 from "../../../assets/landing3.jpg";
+import server from "../../../assets/5 server.jpg";
 
 const AboutContainer = styled.div`
   display: flex;
@@ -31,7 +31,7 @@ class About extends Component {
     return (
       <AboutContainer className="about" >
         <AboutImg>
-          <img src={landing3} />
+          <img src={server} />
         </AboutImg>
         <AboutText>
           <p>

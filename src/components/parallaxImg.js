@@ -8,7 +8,7 @@ let Container = styled.div`
     position       : relative;
     height         : 100%;
     width          : 100%;
-    transition     : 1s;
+    transition     : 3s;
     transform-style: preserve-3d;
     /* &:after{
       top: 0;
@@ -28,7 +28,7 @@ let Container = styled.div`
         width           : ${props => props.width || "100%"};
         filter          : grayscale(${props => props.grayscale || "100%"});
         transform-origin: 50% 50%;
-        transform       : translateZ(${props => props.translateZ}) 
+        transform       : translateZ(${props => props.translateZ})
                           scale(${props =>
                             (parseInt(props.perspective) -
                               parseInt(props.translateZ)) /
@@ -82,7 +82,7 @@ class ParallaxImg extends Component {
     };
     const sreveal = ScrollReveal(defaults);
     sreveal.debug = true;
-    this.sr = sreveal;  
+    this.sr = sreveal;
     console.log("doanimation");
     console.log(this.props.doAnimation)
     // if(this.props.doAnimation){

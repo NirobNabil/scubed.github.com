@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { projects } from "../../data";
-import ParallaxImgContainer from "../parallaxImg";
-import projectSS from "../../assets/projectsSS.jpg";
 import SpecialText from "../specialText.js";
 import Footer from "../footer";
 import stylevars from "../../stylevars";
@@ -66,13 +64,7 @@ class Project extends Component {
 
     //calling reveals for elements
     this.sr.reveal(".project-title", { delay: 100, viewFactor: 0, }); //(this.props.from == "homepage") ? 900 : 1000 });
-
-    // const scroll = new Scrooth({
-    //   element: this.pageContainer.current,
-    //   strength: 18,
-    //   acceleration: 2.5,
-    //   deceleration: .9,
-    // });
+   
   }
   componentDidUpdate(){
     if(this.state.rendered && this.props.SRdestroyed){

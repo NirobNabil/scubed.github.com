@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
 import ParallaxImg from '../../parallaxImg.js';
-import landing1 from '../../../assets/landing2.png';
-import landing2 from '../../../assets/landing1.jpg';
-import landing3 from '../../../assets/dummy.jpg';
+import simple from '../../../assets/1 simple.jpg';
+import secure from '../../../assets/2 secure.jpg';
+import sustainable from '../../../assets/3 sustainable.jpg';
 import stylevars from '../../../stylevars'
 
 let LandingContainer = styled.div`
@@ -97,9 +97,9 @@ class Landing extends Component{
                     <span>innovation. </span>
                 </LandingText>
                 <FixedAnimatingObjects className="parallaxImgs">
-                    <ParallaxImgContainer left={100 - parseInt(containerWidth) + "vw"} top="20%" src= {landing1}></ParallaxImgContainer>
-                    <ParallaxImgContainer left={60 - parseInt(containerWidth) + "vw"} top="65%" src= {landing2}></ParallaxImgContainer>
-                    <ParallaxImgContainer left={0 + "vw"} top="50%" src= {landing3} ></ParallaxImgContainer>
+                    <ParallaxImgContainer left={100 - parseInt(containerWidth) + "vw"} top="20%" src= {simple}></ParallaxImgContainer>
+                    <ParallaxImgContainer left={60 - parseInt(containerWidth) + "vw"} top="65%" src= {secure}></ParallaxImgContainer>
+                    <ParallaxImgContainer left={0 + "vw"} top="50%" src= {sustainable} ></ParallaxImgContainer>
                 </FixedAnimatingObjects>
             </LandingContainer>
         )

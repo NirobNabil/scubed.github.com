@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Cursor from "./customCursor.js";
 import React, { Component } from "react";
-import landing3 from "../assets/landing3.jpg";
+import server from "../assets/5 server.jpg";
 import easyScroll from "easy-scroll"
 import snapTo from "./snapToPosition"
 
@@ -79,7 +79,7 @@ class SpecialTextClass extends Component {
       setTimeout( () => {
         this.specialText.current.classList.toggle('onView');
         this.specialImg.current.classList.toggle('onView');
-      }, timeout)    
+      }, timeout)
     })
   }
   render() {

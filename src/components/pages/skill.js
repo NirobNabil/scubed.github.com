@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-import logo from "../../assets/logo.png";
-import extraimg from "../../assets/landing2.png";
-import Footer from "../footer";
+import simple from "../../assets/1 simple.jpg";
 
 const PageContainer = styled.div`
   display: grid;
@@ -79,7 +77,7 @@ class Skill extends Component {
           </SkillSubtitle>
         </SkillContainer>
         <ExtraImgContainer>
-          <img src={extraimg} />
+          <img src={simple} />
         </ExtraImgContainer>
       </PageContainer>
     );

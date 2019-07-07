@@ -5,13 +5,10 @@ import Services from "./home/services";
 import Projects from "./home/projects";
 import Footer from "../footer";
 import stylevars from "../../stylevars";
-import { getElem, getStyles } from "../../globalFuncs";
-import landing1 from "../../assets/landing2.png";
-import landing2 from "../../assets/landing1.jpg";
-import landing3 from "../../assets/dummy.jpg";
 import { projects } from "../../data.js";
 import ScrollReveal from "scrollreveal";
-import Scrooth from "../../scrooth";
+import Scrooth from "../../scrooth"
+
 
 let HomeContainer = styled.div`
   //border: .3em solid black;
@@ -25,10 +22,16 @@ let HomeContainer = styled.div`
 class Home extends Component {
   constructor() {
     super();
+    this.state = {
+      rendered: false
+    };
     this.sr = null;
   }
   componentDidMount() {
     console.log("mounted");
+    this.setState({
+      rendered: true
+    });
     //instantiating new scrollreveal instance on every mount
     const defaults = {
       delay: 100,
@@ -53,12 +56,12 @@ class Home extends Component {
 
 
     //smooth scrolling
-    // const scroll = new Scrooth({
-    //   element: document.querySelector('.home-container'),
-    //   strength: 18,
-    //   acceleration: 2.5,
-    //   deceleration: .9,
-    // });
+     const scroll = new Scrooth({
+       element: document.querySelector('.home-container'),
+       strength: 18,
+       acceleration: 2.5,
+       deceleration: .9,
+     });
   }
   componentDidUpdate(){
     if(this.props.SRdestroyed){
@@ -69,14 +72,14 @@ class Home extends Component {
         interval: 40,
         //delay: 300
       });
-  
+
       this.sr.reveal(".project-name,  .show-more", {
         duration: 1000,
         distance: '0px',
         delay: 300,
         viewFactor: 0
       });
-  
+
       this.sr.reveal(".contact-info-container > *, .about-us > *");
 
       this.props.updateSRstatus(false);

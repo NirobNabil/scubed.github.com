@@ -1,5 +1,5 @@
 class Scrooth {
-  constructor({element = window, strength=10, acceleration = 1.2,deceleration = 0.975}={}) {
+  constructor({element = window, strength=20, acceleration = 1.2,deceleration = 0.97}={}) {
     this.element = element;
     this.distance = strength;
     this.acceleration = acceleration;
@@ -34,7 +34,7 @@ class Scrooth {
 
       this.top += this.currentDistance;
       this.element.scrollTo(0, this.top);
-      
+
       requestAnimationFrame(this.scroll);
     }
   }

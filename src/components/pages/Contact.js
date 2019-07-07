@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
 import logo from "../../assets/logo.png";
-import extraimg from "../../assets/landing2.png";
+import simple from "../../assets/1 simple.jpg";
 import Footer from "../footer";
 
 const PageContainer = styled.div`
@@ -107,7 +107,7 @@ class Contact extends Component {
           </ContactInfoContainer>
         </ContactContainer>
         <ExtraImgContainer>
-          <img src={extraimg} />
+          <img src={simple} />
         </ExtraImgContainer>
       </PageContainer>
     );

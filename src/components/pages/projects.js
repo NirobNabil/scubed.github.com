@@ -5,7 +5,7 @@ import { projects } from "../../data";
 import Footer from "../footer";
 import stylevars from "../../stylevars";
 import Scrooth from "../../scrooth";
-import ScrollReveal from 'scrollreveal';
+
 
 const PageWrapper = styled.div`
   height: 100vh;

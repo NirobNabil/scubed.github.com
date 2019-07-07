@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-import landing3 from "../../assets/landing3.jpg";
+import server from "../../assets/5 server.jpg";
 import SpecialText from "../specialText.js";
 import Footer from "../footer";
 import Landing from "./studio/landing";
@@ -38,12 +38,12 @@ class PostSpecialTextClass extends Component {
     return (
       <div>
         <PostSpecialText className="postSpecial">
-        S Cubed has started working since April of 2015. 
-        And has successfully provided service to corporate offices, 
-        educational institutions and non profit organizations. Our 
-        customers have always been our top priority. Our team has experts 
-        who directly contact you to understand and analyze your issues better  
-        and try to provide the best possible solution tailored to your preferences. 
+        S Cubed has started working since April of 2015.
+        And has successfully provided service to corporate offices,
+        educational institutions and non profit organizations. Our
+        customers have always been our top priority. Our team has experts
+        who directly contact you to understand and analyze your issues better
+        and try to provide the best possible solution tailored to your preferences.
         We give customized and simple solutions to complex problems through our services.
         </PostSpecialText>
       </div>
@@ -82,12 +82,12 @@ class Studio extends Component {
     //calling reveals for elements
     this.sr.reveal(".landing > *", { delay: 500, interval: 300, viewFactor: 0});
     this.sr.reveal(".about img", { delay: 900, viewFactor: 0 });
-    
+
 
     //smooth scroll
     const scroll = new Scrooth({
       element: document.querySelector('.studioContainer'),
-      strength: 18,
+      strength: 5,
       acceleration: 2.5,
       deceleration: .9,
     });
@@ -107,7 +107,7 @@ class Studio extends Component {
       this.sr.reveal(".contact-info-container > *, .about-us > *"); //footer
 
       this.props.updateSRstatus(false);
-    } 
+    }
   }
   componentWillUnmount() {
     console.log("studio unmount");
@@ -125,7 +125,7 @@ class Studio extends Component {
           <SpecialText
             pageWrapper={this.pageWrapper.current}
             specialText="With sustainability as our goal, we provide simple and secure tools to create and maintain your digital footprint."
-            specialImg={landing3}
+            specialImg={server}
           />
         ) : (
           <></>
@@ -138,7 +138,7 @@ class Studio extends Component {
         ) : (
           <></>
         )}
-        
+
         <Team />
         <Footer />
       </StudioContainer>
