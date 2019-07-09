@@ -3,13 +3,11 @@ import simple from "./assets/1 simple.jpg";
 import secure from "./assets/2 secure.jpg";
 import server from "./assets/5 server.jpg";
 import bulb from "./assets/6 bulb idea.jpg";
-import landingSS from "./assets/projectsSS.jpg"
 import stylevars from "./stylevars";
-import projectSpecialSS from "./assets/projectspecailss.JPG";
 
 
 const projects = {
-  "Electronics Based Startup1": {
+  "GIEST": {
     url: "GEIST_International_Foundation",
     name: "GEIST International Foundation (GIF)",
     nameHTML: ["GEIST International Foundation", <br />, "(GIF)"], //this name represents a jsx object
@@ -30,9 +28,7 @@ const projects = {
         "Digital Marketing"
       ],
     year: "2018",
-    landingSS: landingSS,
     specialImg: server,
-    specialSS: projectSpecialSS
   },
   "SAS PLAB": {
     url: "SAS_PLAB",
@@ -93,25 +89,6 @@ const projects = {
        `,
     highlights:
       [
-        "geistfoundation.org",
-        "WordPress Website Design & Development",
-        "Digital Marketing"
-      ],
-    specialImg: server
-  },
-  "SFOSSIL": {
-    url: "SFOSSIL",
-    name: "SFOSSIL",
-    nameHTML: ["SFOSSIL"], //this name represents a jsx object
-    img: server,
-    specialText:
-      "The menu highlights different types of shows to allow a direct access to dedicated content.",
-    details:
-      `sFossil is a Global Organic Textile Standard certified fabric and garment manufacturer based in Turkey.
-      They specialize in manufacturing organic knitted and woven fabrics and garments. In addition to the full line of basic organics, they also offer versatile solid, dyed and printed fabric. sFossil provides Eco friendly garment solutions and takes a step forward for a cleaner, safer world.
-       `,
-    highlights:
-      [
         "https://www.sfossil.com/",
         "WordPress Website Design & Development",
         "Digital Marketing"
@@ -150,28 +127,8 @@ const projects = {
       `,
     highlights:
       [
-        "https://soft.zpackltd.com/login/?next=/",
-        "WordPress Website Design & Development",
-        "Digital Marketing"
-      ],
-    specialImg: server
-  },
-  "ZPACK": {
-    url: "ZPACK",
-    name: "ZPACK",
-    nameHTML: ["ZPACK"], //this name represents a jsx object
-    img: server,
-    specialText:
-      "The menu highlights different types of shows to allow a direct access to dedicated content.",
-    details:
-      `Zpack produces woven reusable bags. They specialize in cotton bags, tissue bags and paper bags.
-      S Cubed has built a customized website for them according to their needs. The website includes product life cycle management, accounts management, inventory management, order and clients' list etc. S Cubed has automated their production system with this website.
-      `,
-    highlights:
-      [
-        "geistfoundation.org",
-        "WordPress Website Design & Development",
-        "Digital Marketing"
+        "https://soft.zpackltd.com/",
+        "Custom ERP webapp"
       ],
     specialImg: server
   },
@@ -192,7 +149,8 @@ const projects = {
       [
         "https://techinheim.com/",
         "WordPress Website Design & Development",
-        "Digital Marketing"
+        "Digital Marketing",
+        "Platform Development"
       ],
     specialImg: server
   },
@@ -209,9 +167,8 @@ const projects = {
       `,
     highlights:
       [
-        "geistfoundation.org",
-        "WordPress Website Design & Development",
-        "Digital Marketing"
+        "https://abstractpodium.com/",
+        "Custom Webapp & App"
       ],
     specialImg: server
   },
@@ -229,9 +186,8 @@ const projects = {
       `,
     highlights:
       [
-        "geistfoundation.org",
-        "WordPress Website Design & Development",
-        "Digital Marketing"
+        "https://cerl.com.bd/",
+        "WordPress Website Design & Development"
       ],
     specialImg: server
   }

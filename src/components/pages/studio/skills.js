@@ -43,14 +43,11 @@ class SkillPassion extends Component {
       <SkillsPassionContainer className="skills">
         <div>
           <Title>Skills</Title>
-          <li>Content Dev</li>
-          <li>Web Development</li>
-          <li>Logo Design</li>
-
+          <li>Web and Software Development</li>
+          <li>Brand Identity Design</li>
           <li>Digital Marketing</li>
-          <li>Technical Support</li>
-          <li>Digital Art Design</li>
           <li>Technical Consultant</li>
+          <li>Computing Infrastructure Design</li>
           <li>SEO</li>
           
         </div>
