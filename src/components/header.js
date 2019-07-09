@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Background = styled.div`
   position: absolute;
@@ -80,7 +81,7 @@ class header extends Component {
         <Background />
         <Name>
           <Link to="/">
-            <h3>scubed</h3>
+            <img src={logo} height="150px" width="150px"></img>
           </Link>
         </Name>
         <Nav>
