@@ -95,14 +95,14 @@ class Contact extends Component {
           </ContactSubtitle>
           <ContactInfoContainer>
             <Info>
-              <h3>E-mail</h3> <span>loremupsum@scubed.org</span>
+              <h3>E-mail</h3> <span>contact@scubed.com.bd</span>
             </Info>
             <Info>
-              <h3>Call us</h3> <span>+8801848333385</span>
+              <h3>Call us</h3> <span>+8809638012013</span>
             </Info>
             <Info>
               <h3>Address</h3>{" "}
-              <span>3/7/1 johnson road, dhaka nagar siddiqui plaza, B/11</span>
+              <span>Flat B2, House 60, 2 Janata Housing Society, Adabor, Dhaka 1207</span>
             </Info>
           </ContactInfoContainer>
         </ContactContainer>
