@@ -58,7 +58,7 @@ class Home extends Component {
 
     //calling reveals for elements
     //this.sr.reveal(".app", { delay: 400 });
-    this.sr.reveal(".landing-text > *", { distance: "80px", delay: 400, interval: 200, rotate: { z: -2 }, });
+    this.sr.reveal(".landing-text > *", { distance: "80px", delay: 400, interval: 200, rotate: { z: -2 }, viewFactor: 0});
 
 
 

@@ -74,23 +74,23 @@ const Description = styled.div`
 `;
 
 
-const SocialLinks = styled.div`
-    position: relative;
-    background: black;
-    grid-row: 5 / 10;
-    grid-column: 20 / 21;
-    width: 70%;
-    padding: 20% 0%;
-    justify-self: right;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    img{
-        padding: 21%;
-        width: 60%;
-        filter: invert(100%);
-    }
-`;
+// const SocialLinks = styled.div`
+//     position: relative;
+//     background: black;
+//     grid-row: 5 / 10;
+//     grid-column: 20 / 21;
+//     width: 70%;
+//     padding: 20% 0%;
+//     justify-self: right;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//     img{
+//         padding: 21%;
+//         width: 60%;
+//         filter: invert(100%);
+//     }
+// `;
 
 class FooterClass extends Component{
     render(){
@@ -108,15 +108,16 @@ class FooterClass extends Component{
                         <Description>S Cubed offers three steps to efficient digitalization. Automation, innovation and integration. With our premium services we want you to experience the future, now.</Description>
                     </AboutUs>
                 </MainFooter>
-                <SocialLinks className="social-links">
-                    <a href="#"><img  src= {facebook}></img></a>
-                    <a href="#"><img  src= {github}></img></a>
-                    <a href="#"><img  src= {twitter}></img></a>
-                    <a href="#"><img  src= {linkedin}></img></a>
-                </SocialLinks>
             </Footer>
         )
     }
 }
 
 export default FooterClass
+
+/* <SocialLinks className="social-links">
+                    <a href="#"><img  src= {facebook}></img></a>
+                    <a href="#"><img  src= {github}></img></a>
+                    <a href="#"><img  src= {twitter}></img></a>
+                    <a href="#"><img  src= {linkedin}></img></a>
+                </SocialLinks> */

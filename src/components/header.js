@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Background = styled.div`
   position: absolute;
@@ -38,6 +39,11 @@ const Name = styled.div`
   padding: 1em;
   font-family: codebold;
   font-size: 1.6em;
+  display: flex;
+  flex-direction: row;
+  img{
+    height: 4vw;
+  }
 `;
 
 const Nav = styled.div`
@@ -80,7 +86,7 @@ class header extends Component {
         <Background />
         <Name>
           <Link to="/">
-            <h3>scubed</h3>
+            <img src={logo} />
           </Link>
         </Name>
         <Nav>

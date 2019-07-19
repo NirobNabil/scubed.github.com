@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-import server from "../../../assets/5 server.jpg";
+import server from "../../../assets/studio_about.png";
 
 const AboutContainer = styled.div`
   display: flex;

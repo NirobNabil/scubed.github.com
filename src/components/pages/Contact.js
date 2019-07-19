@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
 import logo from "../../assets/logo.png";
-import simple from "../../assets/1 simple.jpg";
+//import simple from "../../assets/1 simple.jpg";
+import simple from "../../assets/contacts.jpg";
 import Footer from "../footer";
 
 const PageContainer = styled.div`
@@ -13,6 +14,7 @@ const PageContainer = styled.div`
   overflow: scroll;
   overflow-x: hidden;
   background: white;
+  margin-bottom: 3rem;
 `;
 
 const LogoContainer = styled.div`
@@ -110,6 +112,7 @@ class Contact extends Component {
           <img src={simple} />
         </ExtraImgContainer>
       </PageContainer>
+
     );
   }
 }

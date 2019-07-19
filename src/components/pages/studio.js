@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-import server from "../../assets/5 server.jpg";
+//import server from "../../assets/5 server.jpg";
+import server from "../../assets/studio.png";
 import SpecialText from "../specialText.js";
 import Footer from "../footer";
 import Landing from "./studio/landing";
@@ -86,11 +87,11 @@ class Studio extends Component {
 
     //smooth scroll
     const scroll = new Scrooth({
-      element: document.querySelector('.studioContainer'),
-      strength: 5,
-      acceleration: 2.5,
-      deceleration: .9,
-    });
+       element: document.querySelector('.studioContainer'),
+       strength: 18,
+       acceleration: 2.5,
+       deceleration: .9,
+     });
   }
   componentDidUpdate(){
     if(this.state.rendered && this.props.SRdestroyed){
