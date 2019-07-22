@@ -47,6 +47,13 @@ class Project extends Component {
       rendered: true
     });
 
+    const scroll = new Scrooth({
+      element: document.querySelector('.project-page-container'),
+      strength: 18,
+      acceleration: 2.5,
+      deceleration: .9,
+    });
+
     //instantiating new scrollreveal instance on every mount
     const defaults = {
       delay: 100,
@@ -83,7 +90,7 @@ class Project extends Component {
   }
   render() {
     return (
-      <ProjectPageContainer ref={this.pageContainer}>
+      <ProjectPageContainer className = "project-page-container"   ref={this.pageContainer}>
         
         <Landing project={this.project} />
         { 
