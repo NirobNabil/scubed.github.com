@@ -43,7 +43,7 @@ class Landing extends Component {
       <LandingContainer className="landing">
         <Logo>
           <h1>
-            S<sup>3</sup>
+            
           </h1>
         </Logo>
         <Headline>

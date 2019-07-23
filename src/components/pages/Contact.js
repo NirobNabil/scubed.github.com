@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import logo from "../../assets/logo.png";
 import simple from "../../assets/1 simple.jpg";
 import Footer from "../footer";
+import Scrooth from "../../scrooth";
 
 const PageContainer = styled.div`
   display: grid;
@@ -81,9 +82,17 @@ const ExtraImgContainer = styled.div`
 `;
 
 class Contact extends Component {
+  componentDidMount() {
+    const scroll = new Scrooth({
+      element: document.querySelector('.contact'),
+      strength: 18,
+      acceleration: 2.5,
+      deceleration: .9,
+    });
+  }
   render() {
     return (
-      <PageContainer>
+      <PageContainer className = "contact">
         <LogoContainer>
           <img src={logo} />
         </LogoContainer>
