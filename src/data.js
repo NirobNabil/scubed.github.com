@@ -1,5 +1,3 @@
-"use strict"
-
 import React from "react";
 import simple from "./assets/1 simple.jpg";
 import secure from "./assets/2 secure.jpg";

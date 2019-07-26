@@ -9,14 +9,6 @@ import { projects } from "../../data.js";
 import ScrollReveal from "scrollreveal";
 import Scrooth from "../../scrooth"
 
-// let toDisplayProjects = ['GEIST', 'SAS PLAB', 'ZPACK']
-// projects = toDisplayProjects.forEach( name => return  )
-
-//console.log("projects log" + JSON.stringify(projects))
-window.gg = projects;
-console.log("gggg")
-console.log(window.gg);
-
 let HomeContainer = styled.div`
   //border: .3em solid black;
   height: 100vh;

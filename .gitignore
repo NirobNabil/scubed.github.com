@@ -86,3 +86,7 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+<<<<<<< HEAD
+=======
+build/
+>>>>>>> 30b501cf89863779e4389bcdc7312badc122ede6

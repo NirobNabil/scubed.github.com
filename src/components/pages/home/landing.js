@@ -102,7 +102,7 @@ class Landing extends Component{
                 </LandingText>
                 <FixedAnimatingObjects className="parallaxImgs">
                     <ParallaxImgContainer left={100 - parseInt(containerWidth) + "vw"} top="20%" src= {simple}></ParallaxImgContainer>
-                    <ParallaxImgContainer left={60 - parseInt(containerWidth) + "vw"} top="65%" src= {secure}></ParallaxImgContainer>
+                    <ParallaxImgContainer left={65 - parseInt(containerWidth) + "vw"} top="65%" src= {secure}></ParallaxImgContainer>
                     <ParallaxImgContainer left={0 + "vw"} top="50%" src= {sustainable} ></ParallaxImgContainer>
                 </FixedAnimatingObjects>
             </LandingContainer>
