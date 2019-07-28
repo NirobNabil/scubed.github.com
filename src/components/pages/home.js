@@ -55,12 +55,12 @@ class Home extends Component {
 
 
     //smooth scrolling
-     const scroll = new Scrooth({
-       element: document.querySelector('.home-container'),
-       strength: 18,
-       acceleration: 2.5,
-       deceleration: .9,
-     });
+    //  const scroll = new Scrooth({
+    //    element: document.querySelector('.home-container'),
+    //    strength: 18,
+    //    acceleration: 2.5,
+    //    deceleration: .9,
+    //  });
   }
   componentDidUpdate(){
     if(this.props.SRdestroyed){

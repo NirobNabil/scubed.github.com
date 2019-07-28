@@ -50,7 +50,7 @@ let ParallaxImageContainer = styled.div`
     left: ${props => props.left};
     top: ${props => props.top};
     transition: .6s;
-    transform-style: preserve-3d;
+    //transform-style: preserve-3d;     //adding preserve-3d here breaks the effect. why?
     /* &.onView{
       //height:32vw;
       opacity: 1;

@@ -4,6 +4,7 @@ import { Router, Route, Switch, BrowserRouter, Link } from "react-router-dom";
 import ParallaxImg from "../../parallaxImg.js";
 import ProjectPage from "../project.js";
 import stylevars from "../../../stylevars";
+import SlideShow from "../../slideshow";
 
 
 const PreviousProjects = styled.div`
@@ -144,7 +145,7 @@ class ProjectClass extends Component {
         </ProjectName>
         <Spacer />
         <ProjectThumbnail>
-          <ParallaxImg
+          <SlideShow
             height="auto"
             width="100%"
             grayscale="0%"
