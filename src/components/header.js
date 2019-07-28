@@ -81,7 +81,7 @@ class header extends Component {
         <Background />
         <Name>
           <Link to="/">
-            <img src={logo} height="150px" width="150px"></img>
+            <img src={logo} height="50px" width="50px"></img>
           </Link>
         </Name>
         <Nav>
