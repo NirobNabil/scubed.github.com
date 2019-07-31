@@ -50,7 +50,6 @@ let ParallaxImageContainer = styled.div`
     left: ${props => props.left};
     top: ${props => props.top};
     transition: .6s;
-    transform-style: preserve-3d;
     /* &.onView{
       //height:32vw;
       opacity: 1;
