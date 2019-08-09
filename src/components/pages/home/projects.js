@@ -4,6 +4,7 @@ import { Router, Route, Switch, BrowserRouter, Link } from "react-router-dom";
 import ParallaxImg from "../../parallaxImg.js";
 import ProjectPage from "../project.js";
 import stylevars from "../../../stylevars";
+import SlideShow from "../../slideshow";
 
 
 const PreviousProjects = styled.div`
@@ -123,7 +124,7 @@ class ProjectClass extends Component {
     this.projectPageLink = React.createRef();
   }
   componentDidMount() {
-    console.log(this.props.project);
+    //console.log(this.props.project);
     // this.projectPageLink.current.addEventListener("click", e => {
     //   e.preventDefault();
     //   this.props.showProjectPage(this.props.project, this.props.currentURL);
@@ -140,16 +141,16 @@ class ProjectClass extends Component {
           > */}
           <Link to={`/projects/${this.props.project.url}`}>
             {this.props.project.nameHTML}
-          </Link>
+          </Link> 
         </ProjectName>
         <Spacer />
         <ProjectThumbnail>
-          <ParallaxImg
+          <SlideShow
             height="auto"
             width="100%"
             grayscale="0%"
             perspective={stylevars.home.perspective}
-            src={this.props.src}
+            slideshow={this.props.project.slideshow}
             translateZ="-5px"
           />
         </ProjectThumbnail>
@@ -215,8 +216,8 @@ const SpacerVertical = styled.div`
 `;
 
 class ProjectsClass extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showingProjectPage: false,
       currentProject: null
@@ -246,6 +247,8 @@ class ProjectsClass extends Component {
         this.setState({ showingProjectPage: false, currentProject: "" });
       }
     };
+
+    this.projectsToShow = props.projectsToShow ? props.projectsToShow : Object.keys(props.projects);
   }
   componentDidMount() {
     window.history.replaceState(
@@ -273,13 +276,13 @@ class ProjectsClass extends Component {
           )}
         </Headline>
         <Projects>
-          {Object.keys(this.props.projects).map(i => {
+          {this.projectsToShow.map(i => {
+            console.log(i)
             return (
               <ProjectClass
                 currentURL={this.props.match.path}
                 showProjectPage={this.showProjectPage}
                 project={this.props.projects[i]}
-                src={this.props.projects[i].img}
               />
             );
           })}

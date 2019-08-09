@@ -13,17 +13,21 @@ const SpecialTextContainer = styled.div`
 `;
 
 const SpecialImg = styled.div`
-  position: relative;
+  position: absolute;
   left: ${props => (props.left || 45) + "vw"};
   transition: 1s;
   transition-delay: .05s;
   //transition-timing-function: cubic-bezier(0.55, 0.94, 0.59, 0.49);
   transition-timing-function: cubic-bezier(.82,.01,.5,.82);
+  width: 30rem;
+  height: 100%;
+  //overflow-x: hidden;
   img {
     top: 50%;
     z-index: 5;
     transform: translateX(-50%) translateY(-50%);
-    max-width: 30rem;
+    //max-width: 30rem;
+    min-height: 40rem;
     position: absolute;
   }
   &.onView{

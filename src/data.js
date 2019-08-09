@@ -29,6 +29,7 @@ const projects = {
       ],
     year: "2018",
     specialImg: server,
+    slideshow: [server, server, server]
   },
   "SAS PLAB": {
     url: "SAS_PLAB",
@@ -54,7 +55,8 @@ const projects = {
         "WordPress Website Design & Development",
         "Digital Marketing"
       ],
-    specialImg: server
+    specialImg: server,
+    slideshow: [server, server, server]
   },
   "JUMUNA": {
     url: "JUMUNA",
@@ -74,7 +76,8 @@ const projects = {
         "WordPress Website Design & Development",
         "Digital Marketing"
       ],
-    specialImg: server
+    specialImg: server,
+    slideshow: [server, server, server]
   },
   "SFOSSIL": {
     url: "SFOSSIL",
@@ -93,7 +96,8 @@ const projects = {
         "WordPress Website Design & Development",
         "Digital Marketing"
       ],
-    specialImg: server
+    specialImg: server,
+    slideshow: [server, server, server]
   },
   "INTUITIONINT": {
     url: "INTUITIONINT",
@@ -112,7 +116,8 @@ const projects = {
         "WordPress Website Design & Development",
         "Digital Marketing"
       ],
-    specialImg: server
+    specialImg: server,
+    slideshow: [server, server, server]
   },
   "ZPACK": {
     url: "ZPACK",
@@ -130,7 +135,8 @@ const projects = {
         "https://soft.zpackltd.com/",
         "Custom ERP webapp"
       ],
-    specialImg: server
+    specialImg: server,
+    slideshow: [server, server, server]
   },
   
   "TECHINHEIM": {
@@ -152,7 +158,8 @@ const projects = {
         "Digital Marketing",
         "Platform Development"
       ],
-    specialImg: server
+    specialImg: server,
+    slideshow: [server, server, server]
   },
   "ABSTRACTPODIUM": {
     url: "ABSTRACTPODIUM",
@@ -170,7 +177,8 @@ const projects = {
         "https://abstractpodium.com/",
         "Custom Webapp & App"
       ],
-    specialImg: server
+    specialImg: server,
+    slideshow: [server, server, server]
   },
   "CERL": {
     url: "CERL",
@@ -189,7 +197,8 @@ const projects = {
         "https://cerl.com.bd/",
         "WordPress Website Design & Development"
       ],
-    specialImg: server
+    specialImg: server,
+    slideshow: [server, server, server]
   }
 };
 

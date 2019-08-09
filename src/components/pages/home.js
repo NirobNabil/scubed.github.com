@@ -9,7 +9,6 @@ import { projects } from "../../data.js";
 import ScrollReveal from "scrollreveal";
 import Scrooth from "../../scrooth"
 
-
 let HomeContainer = styled.div`
   //border: .3em solid black;
   height: 100vh;
@@ -51,17 +50,17 @@ class Home extends Component {
 
     //calling reveals for elements
     //this.sr.reveal(".app", { delay: 400 });
-    this.sr.reveal(".landing-text > *", { distance: "80px", delay: 400, interval: 200, rotate: { z: -2 }, });
+    this.sr.reveal(".landing-text > *", { distance: "80px", delay: 400, interval: 200, rotate: { z: -2 }, viewFactor: 0});
 
 
 
     //smooth scrolling
-     const scroll = new Scrooth({
-       element: document.querySelector('.home-container'),
-       strength: 18,
-       acceleration: 2.5,
-       deceleration: .9,
-     });
+    //  const scroll = new Scrooth({
+    //    element: document.querySelector('.home-container'),
+    //    strength: 18,
+    //    acceleration: 2.5,
+    //    deceleration: .9,
+    //  });
   }
   componentDidUpdate(){
     if(this.props.SRdestroyed){
@@ -96,6 +95,7 @@ class Home extends Component {
         <Landing />
         <Services />
         <Projects
+          projectsToShow={["GIEST", "SAS PLAB", "ZPACK"]}
           fromHomePage={true}
           match={this.props.match}
           projects={projects}

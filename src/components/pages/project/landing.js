@@ -45,7 +45,7 @@ const ProjectDetailsContainer = styled.div`
 `;
 
 const ProjectHistory = styled.div`
-  width: 12rem;
+  width: 16rem;
   color: white;
   blockquote {
   }
@@ -74,6 +74,17 @@ const ProjectSummary = styled.div`
   width: 20rem;
 `;
 
+// function GG(props){
+//   console.log(props.obj);
+//   let obj = props.obj;
+//   if(obj.toUpperCase().indexOf("HTTP")){
+    
+//   }
+//   return (
+    
+//   )
+// }
+
 class Landing extends React.Component{
     render(){
         return (
@@ -91,10 +102,11 @@ class Landing extends React.Component{
                 <ProjectHistory>
                 {this.props.project.year}
                 { this.props.project.highlights.map( (obj) => {
+                    console.log("gg")
                     return (
-                    <HistoryBlockquote>
-                        { obj }
-                    </HistoryBlockquote>
+                      <HistoryBlockquote>
+                        { obj.toLowerCase().indexOf("http") == -1 ? obj : <a href={obj} >{obj}</a> }
+                      </HistoryBlockquote>
                     )
                     }) 
                 }

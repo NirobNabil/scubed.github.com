@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-import server from "../../assets/5 server.jpg";
+//import server from "../../assets/5 server.jpg";
+import server from "../../assets/studio.png";
 import SpecialText from "../specialText.js";
 import Footer from "../footer";
 import Landing from "./studio/landing";
