@@ -13,6 +13,7 @@ let LandingContainer = styled.div`
 	height               : 170vh;
 	width                : 100%;
 	position             : relative;
+    transform-style: preserve-3d;
 `;
 
 let LandingText = styled.div`
@@ -26,15 +27,17 @@ let LandingText = styled.div`
     display       : flex;
     flex-direction: column;
     z-index       : 10;
+    position: relative;
 `;
 
 let FixedAnimatingObjects = styled.div`
-    position   : absolute;
+    position   : absolute; //new
     grid-column: span 8;
     grid-row   : span 12;
     display    : flex;
     height     : 100%;
     width      : 100%;
+    transform-style: preserve-3d;
 `;
 
 const containerWidth = "28vw";
@@ -47,6 +50,7 @@ let ParallaxImageContainer = styled.div`
     left: ${props => props.left};
     top: ${props => props.top};
     transition: .6s;
+    //transform-style: preserve-3d;     //adding preserve-3d here breaks the effect. why?
     /* &.onView{
       //height:32vw;
       opacity: 1;

@@ -5,7 +5,6 @@ import facebook from "../assets/icons/facebook.png";
 import twitter from "../assets/icons/twitter.png";
 import github from "../assets/icons/github.png";
 import linkedin from "../assets/icons/linkedin.png";
-import logo from "../assets/logo.png";
 import stylevars from '../stylevars';
 import ScrollReveal from "scrollreveal"
 
@@ -75,23 +74,23 @@ const Description = styled.div`
 `;
 
 
-const SocialLinks = styled.div`
-    position: relative;
-    background: black;
-    grid-row: 5 / 10;
-    grid-column: 20 / 21;
-    width: 70%;
-    padding: 20% 0%;
-    justify-self: right;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    img{
-        padding: 21%;
-        width: 60%;
-        filter: invert(100%);
-    }
-`;
+// const SocialLinks = styled.div`
+//     position: relative;
+//     background: black;
+//     grid-row: 5 / 10;
+//     grid-column: 20 / 21;
+//     width: 70%;
+//     padding: 20% 0%;
+//     justify-self: right;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//     img{
+//         padding: 21%;
+//         width: 60%;
+//         filter: invert(100%);
+//     }
+// `;
 
 class FooterClass extends Component{
     render(){
@@ -100,24 +99,25 @@ class FooterClass extends Component{
                 <FooterBack><img src={footerBackImg}></img></FooterBack>
                 <MainFooter>
                     <ContactInfoContainer className="contact-info-container">
-                        <Info><h3>E-mail</h3> <span>contact@scubed.com.bd</span></Info>
-                        <Info><h3>Call us</h3> <span>+8809638012013</span></Info>
-                        <Info><h3>Address</h3> <span>Flat B2, House 60, 2 Janata Housing Society, Adabor, Dhaka 1207</span></Info>
+                        <Info><h3>E-mail</h3> <span>loremupsum@scubed.org</span></Info>
+                        <Info><h3>Call us</h3> <span>+8801848333385</span></Info>
+                        <Info><h3>Address</h3> <span>3/7/1 johnson road, dhaka nagar siddiqui plaza, B/11</span></Info>
                     </ContactInfoContainer>
                     <AboutUs className="about-us">
-                        <Headline><img src={logo} height="150px" width="150px"></img></Headline>
+                        <Headline><h1>S<sup>3</sup></h1></Headline>
                         <Description>S Cubed offers three steps to efficient digitalization. Automation, innovation and integration. With our premium services we want you to experience the future, now.</Description>
                     </AboutUs>
                 </MainFooter>
-                <SocialLinks className="social-links">
-                    <a href="#"><img  src= {facebook}></img></a>
-                    <a href="#"><img  src= {github}></img></a>
-                    <a href="#"><img  src= {twitter}></img></a>
-                    <a href="#"><img  src= {linkedin}></img></a>
-                </SocialLinks>
             </Footer>
         )
     }
 }
 
 export default FooterClass
+
+/* <SocialLinks className="social-links">
+                    <a href="#"><img  src= {facebook}></img></a>
+                    <a href="#"><img  src= {github}></img></a>
+                    <a href="#"><img  src= {twitter}></img></a>
+                    <a href="#"><img  src= {linkedin}></img></a>
+                </SocialLinks> */

@@ -73,8 +73,8 @@ class Team extends Component {
   render() {
     return (
       <TeamContainer className="team">
-        <div class="title">Core team</div>
-        <div class="team-members">
+        <div className="title">Core team</div>
+        <div className="team-members">
           {Object.keys(teamMembers).map(name => {
             return (
               <TeamMemberClass

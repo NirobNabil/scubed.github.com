@@ -39,6 +39,11 @@ const Name = styled.div`
   padding: 1em;
   font-family: codebold;
   font-size: 1.6em;
+  display: flex;
+  flex-direction: row;
+  img{
+    height: 4vw;
+  }
 `;
 
 const Nav = styled.div`
@@ -81,7 +86,7 @@ class header extends Component {
         <Background />
         <Name>
           <Link to="/">
-            <img src={logo} height="50px" width="50px"></img>
+            <img src={logo} />
           </Link>
         </Name>
         <Nav>
